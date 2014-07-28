@@ -1,0 +1,24 @@
+<ul id='menu'>
+  <%= render @menu %>
+</ul>
+<h2>Add a submenu:</h2>
+<%= form_for([@menu, @menu.submenus.build]) do |f| %>
+  <div class="form-group">
+    <%= f.label :title %><br />
+    <%= f.text_field :title,class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :icon %><br />
+    <%= f.text_field :icon,class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :url %><br />
+    <%= f.text_field :url,class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= submit_tag "Submit", class: "btn btn-primary btn-sm" %>
+  </div>
+<% end %>
+
+<%= link_to 'Edit', edit_menu_path(@menu) %> |
+<%= link_to 'Back', menus_path %>

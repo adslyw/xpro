@@ -1,0 +1,27 @@
+<ul id='menu'>
+  <% :menus.each do |menu|%>
+    <li class="">
+      <a href="<%= menu.url %>">
+        <%= icon(menu.icon) %>
+        <span class="link-title">&nbsp;<%= menu.title %></span>
+        <% if !menu.submenus.empty? %>
+          <span class="fa arrow"></span>
+        </a>
+      <ul>
+        <% menu.submenus.each do |submenu| %>
+          <%=  render submenu %>
+        <% end %>
+      </ul>
+      </li>
+        <% else%>
+      </a>
+    </li>
+        <% end %>
+    <li class="nav-divider"></li>
+  <% end %>
+</ul>
+<script>
+    $(function () {
+        $('#menu').metisMenu();
+    });
+</script>

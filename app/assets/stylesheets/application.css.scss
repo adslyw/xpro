@@ -1,0 +1,69 @@
+@import "bootstrap";
+@import "font-awesome";
+body {
+  padding-top: 60px;
+}
+
+#menu li, #menu a {
+    display: block;
+    text-decoration: none;
+}
+li > a {
+    color: #444;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 10px 0px 10px 15px;
+}
+ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none outside none;
+}
+
+.arrow {
+    float: right;
+}
+
+.glyphicon.arrow:before {
+    content: "\e079";
+}
+
+.active > a > .glyphicon.arrow:before {
+    content: "\e114";
+}
+
+.fa.arrow:before {
+    content: "\f104";
+}
+
+.active > a > .fa.arrow:before {
+    content: "\f107";
+}
+
+.plus-times {
+    float: right;
+}
+
+.fa.plus-times:before {
+    content: "\f067";
+}
+
+.active > a > .fa.plus-times {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.plus-minus {
+    float: right;
+}
+
+.fa.plus-minus:before {
+    content: "\f067";
+}
+
+.active > a > .fa.plus-minus:before {
+    content: "\f068";
+}

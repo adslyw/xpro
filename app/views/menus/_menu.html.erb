@@ -1,0 +1,13 @@
+<li class="nav-divider"></li>
+<li class="">
+  <a href="<%= menu.url %>">
+    <%= icon(menu.icon) %>
+    <span class="link-title">&nbsp;<%= menu.title %></span>
+    <% if !menu.submenus.empty? %>
+      <span class="fa arrow"></span>
+    <% end %>
+  </a>
+  <ul>
+    <%= render menu.submenus %>
+  </ul>
+</li>
