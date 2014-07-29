@@ -1,4 +1,7 @@
 Dba::Application.routes.draw do
+  get "database/create"
+  get "database/destroy"
+
   resources :users
 
 
@@ -13,8 +16,8 @@ Dba::Application.routes.draw do
   end
   resources :posts
   resources :sessions, only: [:new, :create, :destroy]
-
-  match '/signup',  to: 'users#new',            via: 'get'
+  match '/bcv', to: 'database#index',          via: 'get'
+  match '/signup',  to: 'users#new',           via: 'get'
   match '/login',  to: 'sessions#new',         via: 'get'
   match '/logout', to: 'sessions#destroy',     via: 'delete'
 
