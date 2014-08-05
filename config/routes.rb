@@ -4,7 +4,6 @@ Dba::Application.routes.draw do
 
   resources :users
 
-
   get "home/index"
 
   get "home/about"
@@ -14,13 +13,14 @@ Dba::Application.routes.draw do
   resources :menus do
     resources :submenus
   end
+  resources :submenus
   resources :posts
   resources :sessions, only: [:new, :create, :destroy]
   match '/bcv', to: 'database#index',          via: 'get'
   match '/signup',  to: 'users#new',           via: 'get'
   match '/login',  to: 'sessions#new',         via: 'get'
   match '/logout', to: 'sessions#destroy',     via: 'delete'
-
+  match '/dblink',  to: 'database#mkdblink',  via: 'get'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

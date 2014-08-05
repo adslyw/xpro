@@ -1,1 +1,15 @@
-<i class="fa fa-history">&nbspBCV数据库更新时间</i></br><%=  @when_bcv_updated %>
+<%if bcv_updated?(@when_bcv_updated) %>
+  BCV数据库已经更新</br>
+<% else %>
+  注意BCV数据库没有更新</br>
+<% end %>
+<i class="fa fa-history">&nbspBCV数据库更新时间：</i><%=  @when_bcv_updated %>
+<% if dblink_bill2crm_existed? %>
+   <p>
+     数据库链接bill2crm已经存在
+   </p>
+<% else %>
+   <p>
+     数据库链接bill2crm不存在，现在就<%= link_to "创建", dblink_path %>吗？
+   </p>
+<% end %>

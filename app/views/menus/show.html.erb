@@ -1,5 +1,24 @@
 <ul id='menu'>
-  <%= render @menu %>
+    <li class="">
+      <a href="<%= @menu.url %>">
+        <%= icon(@menu.icon) %>
+        <span class="link-title">&nbsp;<%= @menu.title %></span>
+        <% if !@menu.submenus.empty? %>
+          <span class="fa arrow"></span>
+        <% end %>
+      </a>
+      <ul>
+        <% @menu.submenus.each do |submenu| %>
+          <li class="">
+            <a href="<%= edit_submenu_path(submenu) %>">
+              <%= icon(submenu.icon) %>
+              <span>&nbsp;<%= submenu.title %></span>
+            </a>
+            <%= link_to '删除', submenu, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </li>
+        <% end %>
+      </ul>
+    </li>
 </ul>
 <h2>Add a submenu:</h2>
 <%= form_for([@menu, @menu.submenus.build]) do |f| %>
@@ -19,6 +38,4 @@
     <%= submit_tag "Submit", class: "btn btn-primary btn-sm" %>
   </div>
 <% end %>
-
-<%= link_to 'Edit', edit_menu_path(@menu) %> |
 <%= link_to 'Back', menus_path %>
