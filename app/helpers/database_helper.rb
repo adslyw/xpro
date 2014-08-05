@@ -13,10 +13,6 @@ module DatabaseHelper
   def dblink_bill2crm_existed?
     connect(DB_SERVER,DB_USER,DB_PASSWORD,BCV)
     query "select object_name,status from user_objects where object_type='DATABASE LINK'",false
-    p @result
-    puts @result[0][1]
-    puts @result[0][1] == 'VALID'
-    puts (@result.nil? || @result[0][1] == 'VALID')
     @result.nil? || @result[0][1] == 'VALID'
   end
   def make_dblink
