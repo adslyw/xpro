@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://ruby.sdutlinux.org/'
 
 gem 'rails', '3.2.12'
 
@@ -30,7 +30,7 @@ gem 'jquery-rails'
 
 # Use unicorn as the app server
  gem 'unicorn'
-
+ gem 'lazy_high_charts'
 # Deploy with Capistrano
 # gem 'capistrano'
 

@@ -21,6 +21,8 @@ Dba::Application.routes.draw do
   match '/login',  to: 'sessions#new',         via: 'get'
   match '/logout', to: 'sessions#destroy',     via: 'delete'
   match '/dblink',  to: 'database#mkdblink',  via: 'get'
+  match '/home',   to: 'home#index',          via: 'get'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
