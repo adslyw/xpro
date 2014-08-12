@@ -9,7 +9,6 @@ class HomeController < ApplicationController
         {:title => {:text => "GDP in Billions", :margin => 70} },
         {:title => {:text => "Population in Millions"}, :opposite => true},
       ]
-      f.legend(:align => 'right', :verticalAlign => 'top', :y => 75, :x => -50, :layout => 'vertical')
       f.chart({:defaultSeriesType=>"column"})
     end
     respond_to do |format|
