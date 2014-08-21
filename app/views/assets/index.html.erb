@@ -1,0 +1,27 @@
+<table class="table table-condensed">
+  <tr>
+    <th>文件名</th>
+    <th>大小</th>
+    <th>上传时间</th>
+    <th> - </th>
+    <th> - </th>
+    <th> - </th>
+    <th> - </th>
+  </tr>
+
+<% @assets.each do |asset| %>
+  <tr>
+    <td><i class="<%= icon_for(asset) %>"></i>&nbsp;<%=  asset.file_name %></td>
+    <td><%= number_to_human_size(asset.file_size, :precision => 2) %></td>
+    <td><%= asset.uploaded_file_updated_at.localtime.to_s(:db) %></td>
+    <td><%= link_to '下载', download_url(asset) %></td>
+    <td><%= link_to '分享', '#' %></td>
+    <td><%= link_to '更改', edit_asset_path(asset) %></td>
+    <td><%= link_to '删除', asset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '上传新文件', new_asset_path, :class => 'btn btn-primary' %>

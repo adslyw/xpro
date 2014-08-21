@@ -58,5 +58,8 @@ module Dba
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # change the rails defalt timezone
+    config.active_record.default_timezone = :local
   end
 end

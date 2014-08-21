@@ -1,4 +1,7 @@
 Dba::Application.routes.draw do
+  resources :assets
+
+
   get "database/create"
   get "database/destroy"
 
@@ -22,7 +25,7 @@ Dba::Application.routes.draw do
   match '/logout', to: 'sessions#destroy',     via: 'delete'
   match '/dblink',  to: 'database#mkdblink',  via: 'get'
   match '/home',   to: 'home#index',          via: 'get'
-  
+  match 'assets/get/:id', to: 'assets#get', :as => 'download'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
