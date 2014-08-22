@@ -21,7 +21,14 @@ class Asset < ActiveRecord::Base
   @allowed_file_types = [
     /image\/(png|gif|jpe?g)/,
     /application\/(zip|ogg|pdf)/,
-    /application\/vnd.(ms|openxmlformats).*\Z/,
+    'application/msword',
+    'application/vnd.ms-word',
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    'application/msexcel',
+    'application/vnd.ms-excel',
+    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+    'application/vnd.ms-powerpoint',
+    'application/vnd.openxmlformats-officedocument.presentationml.presentation',
     /video\/(mp4|ogg|x-flv)/,
     /text\/(plain|csv)/,
     /audio\/(mp4|mpeg|ogg)/
@@ -32,7 +39,8 @@ class Asset < ActiveRecord::Base
   validates_attachment_size :uploaded_file, :less_than => 10.megabytes
   validates_attachment_presence :uploaded_file
   validates_attachment_file_name :uploaded_file, :matches => @allowed_file_names
-  validates_attachment_content_type :uploaded_file, :content_type => @allowed_file_types
+  #validates_attachment_content_type :uploaded_file, :content_type => @allowed_file_types
+  do_not_validate_attachment_file_type :uploaded_file
   def file_name
     uploaded_file_file_name
   end

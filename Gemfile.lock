@@ -127,6 +127,7 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    will_paginate (3.0.7)
 
 PLATFORMS
   ruby
@@ -145,3 +146,4 @@ DEPENDENCIES
   ruby-oci8 (~> 2.1.7)
   sass-rails (~> 3.2.3)
   unicorn
+  will_paginate (~> 3.0)
