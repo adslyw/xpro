@@ -1,5 +1,8 @@
-<h1>Listing products</h1>
-
+<div>
+  <i class="fa fa-download"></i>&nbsp下载:
+  <%= link_to "CSV", products_path(format: "csv") %> |
+  <%= link_to "Excel", products_path(format: "xlsx") %>
+</div>
 <table class="table">
   <tr>
     <th>F_PROD_ID</th>

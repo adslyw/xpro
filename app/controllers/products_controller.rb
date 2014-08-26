@@ -7,6 +7,8 @@ class ProductsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }
+      format.csv { render text: Product.to_csv }
+      format.xlsx { send_data Product.to_xlsx.to_stream.read, :filename => 'products.xlsx', :type => "application/vnd.openxmlformates-officedocument.spreadsheetml.sheet" }
     end
   end
 
