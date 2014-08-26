@@ -1,0 +1,30 @@
+<h1>Listing products</h1>
+
+<table class="table">
+  <tr>
+    <th>F_PROD_ID</th>
+    <th>F_PROD_NAME</th>
+    <th>F_IF_3G</th>
+    <th>F_PROD_TYPE</th>
+    <th>F_SERVICE_KIND</th>
+    <th>-</th>
+    <th>-</th>
+    <th>-</th>
+  </tr>
+
+<% @products.each do |product| %>
+  <tr>
+    <td><%= product.f_prod_id %></td>
+    <td><%= product.f_prod_name %></td>
+    <td><%= product.f_if_3g %></td>
+    <td><%= product.f_prod_type %></td>
+    <td><%= product.f_service_kind %></td>
+    <td><%= link_to 'Show', product %></td>
+    <td><%= link_to 'Edit', edit_product_path(product) %></td>
+    <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= link_to '添加新产品', new_product_path, :class => "btn btn-success" %>
