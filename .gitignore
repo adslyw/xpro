@@ -15,3 +15,4 @@
 /tmp
 /helpers/oracle.rb
 /uploaded
+/config/database.yml

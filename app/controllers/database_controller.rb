@@ -2,7 +2,7 @@ class DatabaseController < ApplicationController
   include DatabaseHelper
 
   def index
-    @when_bcv_updated = bcv_update_time
+    @when_bcv_updated = Sync.first.item_value
     respond_to do |format|
       format.html
     end
