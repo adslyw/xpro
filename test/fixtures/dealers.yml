@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  dealer_id: MyString
+  dealer_name: MyString
+  struct_id: MyString
+
+two:
+  dealer_id: MyString
+  dealer_name: MyString
+  struct_id: MyString
