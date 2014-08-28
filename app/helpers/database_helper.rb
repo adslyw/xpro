@@ -21,6 +21,6 @@ module DatabaseHelper
   end
   def make_dblink
     connect(DB_SERVER,DB_USER,DB_PASSWORD,BCV)
-    @conn.exec("create database link bill2crm connect to #{DB_USER} identified by #{DB_PASSWORD} using '#{CRM}'")
+    @conn.exec("create database link #{CRM_DBLINK} connect to #{DB_USER} identified by #{DB_PASSWORD} using '#{CRM}'")
   end
 end

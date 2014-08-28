@@ -65,3 +65,9 @@ remote_db:
   database: //130.84.1.112:1521/bssbill1
   username: SX_SL
   password: DW56H1XO
+
+remote_db_crm:
+  adapter: oracle_enhanced
+  database: //130.84.1.122:1521/bsscrm1
+  username: SX_SL
+  password: DW56H1XO

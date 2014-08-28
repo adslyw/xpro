@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  dev_code: MyString
+  dev_name: MyString
+
+two:
+  dev_code: MyString
+  dev_name: MyString
