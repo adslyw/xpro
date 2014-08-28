@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  f_prod_id: 1
+  f_prod_name: MyString
+  f_if_3g: 1
+  f_prod_type: 1
+  f_service_kind: 1
+
+two:
+  f_prod_id: 1
+  f_prod_name: MyString
+  f_if_3g: 1
+  f_prod_type: 1
+  f_service_kind: 1

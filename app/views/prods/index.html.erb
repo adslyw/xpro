@@ -1,0 +1,26 @@
+<%= will_paginate @assets, :class => 'apple_pagination' %>
+<table class="table table-condensed">
+  <tr>
+    <th>F prod</th>
+    <th>F prod name</th>
+    <th>F if 3g</th>
+    <th>F prod type</th>
+    <th>F service kind</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @prods.each do |prod| %>
+  <tr>
+    <td><%= prod.f_prod_id %></td>
+    <td><%= prod.f_prod_name %></td>
+    <td><%= prod.f_if_3g %></td>
+    <td><%= prod.f_prod_type %></td>
+    <td><%= prod.f_service_kind %></td>
+    <td><%= link_to 'Show', prod %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

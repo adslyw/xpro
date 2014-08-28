@@ -1,4 +1,7 @@
 Dba::Application.routes.draw do
+  resources :prods
+
+
   resources :products
 
 
