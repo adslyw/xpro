@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  f_area_id: MyString
+  f_area_name: MyString
+
+two:
+  f_area_id: MyString
+  f_area_name: MyString
