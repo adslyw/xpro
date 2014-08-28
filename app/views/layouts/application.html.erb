@@ -5,34 +5,38 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="col-lg-2">
-        <ul class="nav navbar-nav navbar-left">
-          <a class="navbar-brand" href="/">Adslyw</a>
-        </ul>
-      </div>
-      <div class="col-lg-8">
-
-      </div>
-      <div class="col-lg-2">
-        <ul class="nav navbar-nav navbar-left">
-          <li>
-          <% if !signed_in? %>
-            <a href="/login">
-              <span class="glyphicon glyphicon-log-in"></span>
-              登录
-            </a>
-          <% else %>
-            <%= link_to logout_path, method: :delete do %>
-              <span class="glyphicon glyphicon-log-out"></span> 离开
-            <% end -%>
-          <% end %>
-          </li>
-        </ul>
-      </div>
-  </nav>
 </head>
 <body>
+  <div id='header'>
+    <div class="container">
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+          <div class="col-lg-2">
+            <ul class="nav navbar-nav navbar-left">
+              <a class="navbar-brand" href="/">Adslyw</a>
+            </ul>
+          </div>
+          <div class="col-lg-8">
+
+          </div>
+          <div class="col-lg-2">
+            <ul class="nav navbar-nav navbar-left">
+              <li>
+              <% if !signed_in? %>
+                <a href="/login">
+                  <span class="glyphicon glyphicon-log-in"></span>
+                  登录
+                </a>
+              <% else %>
+                <%= link_to logout_path, method: :delete do %>
+                  <span class="glyphicon glyphicon-log-out"></span> 离开
+                <% end -%>
+              <% end %>
+              </li>
+            </ul>
+          </div>
+      </nav>
+    </div>
+  </div>
     <div class="col-lg-2">
       <% if signed_in? %>
         <ul id='menu'>
@@ -43,7 +47,7 @@
       <% end %>
     </div>
     <div class="col-lg-8">
-      <%= yield %>      
+      <%= yield %>
     </div>
     <div class="col-lg-2">
     </div>
