@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  service_id: MyString
+  user_id: 1
+  account_id: 1
+  customer_id: 1
+  nundle_id: 1
+  belong_code: MyString
+  service_kind: 1
+  developer_dealer: MyString
+  developer: MyString
+  apply_start_date: 2014-09-01
+  service_stop_date: 2014-09-01
+  service_invalid_date: 2014-09-01
+  dealer_return_date: 2014-09-01
+  service_favour_id: MyString
+  if_valid: 1
+  serving_status: 1
+  status_change_date: 2014-09-01
+  bundle_kind: 1
+  user_level: MyString
+  pay_type: 1
+  complete_date: 2014-09-01
+  preserve02: 1
+
+two:
+  service_id: MyString
+  user_id: 1
+  account_id: 1
+  customer_id: 1
+  nundle_id: 1
+  belong_code: MyString
+  service_kind: 1
+  developer_dealer: MyString
+  developer: MyString
+  apply_start_date: 2014-09-01
+  service_stop_date: 2014-09-01
+  service_invalid_date: 2014-09-01
+  dealer_return_date: 2014-09-01
+  service_favour_id: MyString
+  if_valid: 1
+  serving_status: 1
+  status_change_date: 2014-09-01
+  bundle_kind: 1
+  user_level: MyString
+  pay_type: 1
+  complete_date: 2014-09-01
+  preserve02: 1
