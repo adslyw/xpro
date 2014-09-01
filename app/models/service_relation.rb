@@ -90,4 +90,5 @@ class ServiceRelation < ActiveRecord::Base
                        :first_call_date,
                        :dealer_innet_method
   belongs_to :service_kind,  :foreign_key => "service_kind"
+  belongs_to :service_status, :foreign_key => "serving_status"
 end

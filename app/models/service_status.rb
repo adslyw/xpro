@@ -5,4 +5,5 @@ class ServiceStatus < ActiveRecord::Base
   set_primary_key :kind
   ignore_table_columns :if_open, :note
 
+  has_many :service_relations, :foreign_key => "serving_status"
 end
