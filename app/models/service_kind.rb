@@ -6,4 +6,6 @@ class ServiceKind < ActiveRecord::Base
   ignore_table_columns :service_flag, :if_open, :month_fee_onoff,
                        :limit_control, :credit_control, :have_call_limit,
                        :pay_order
+  has_many :service_relations,  :foreign_key => "service_kind"
+
 end
