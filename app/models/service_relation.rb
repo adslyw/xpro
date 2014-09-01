@@ -91,4 +91,5 @@ class ServiceRelation < ActiveRecord::Base
                        :dealer_innet_method
   belongs_to :service_kind,  :foreign_key => "service_kind"
   belongs_to :service_status, :foreign_key => "serving_status"
+  belongs_to :prod, :foreign_key => "service_favour_id"
 end

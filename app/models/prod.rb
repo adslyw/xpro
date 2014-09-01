@@ -14,4 +14,5 @@ class Prod < ActiveRecord::Base
                        :f_close_date, :f_plan_id, :f_version_upgrade_reason, :f_spread_range, :f_rel_procinst_id,
                        :f_if_grp, :f_if_reorder, :f_lifecycle_id, :f_if_comb_prod, :f_prodcycle_size, :f_if_top,
                        :f_if_unified, :f_bill_flag, :f_real_release_date
+  has_many :service_relations, :foreign_key => "service_favour_id"
 end
