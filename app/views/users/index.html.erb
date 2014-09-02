@@ -1,7 +1,8 @@
 <h1>Listing users</h1>
 
-<table>
+<table class="table">
   <tr>
+    <th></th>
     <th>Name</th>
     <th>Email</th>
     <th></th>
@@ -11,6 +12,7 @@
 
 <% @users.each do |user| %>
   <tr>
+    <td><%= gravatar_for(user,25) %></td>
     <td><%= user.name %></td>
     <td><%= user.email %></td>
     <td><%= link_to 'Show', user %></td>
@@ -19,7 +21,7 @@
   </tr>
 <% end %>
 </table>
-
+<%= will_paginate @users, :class => 'apple_pagination' %>
 <br />
 
 <%= link_to 'New User', new_user_path %>
