@@ -94,8 +94,37 @@ class ServiceRelation < ActiveRecord::Base
   belongs_to :prod, :foreign_key => "service_favour_id"
   belongs_to :dealer, :foreign_key => "developer_dealer"
   belongs_to :developer, :foreign_key => "developer"
+  belongs_to :area, :foreign_key => "belong_code"
 
   default_scope where(:if_valid => 1)
   scope :innet, where(:if_valid => 1)
   scope :offnet, where(:if_valid => 0)
+
+  def type
+    pay_type
+  end
+  def service_name
+    self.service_kind.service_name
+  end
+  def developer_name
+    self.developer.dev_name
+  end
+  def dealer_name
+    self.dealer.dealer_name
+  end
+  def area_name
+    self.area.f_area_name
+  end
+  def prod_name
+    self.prod.f_prod_name
+  end
+  def if_3g
+    case self.prod.f_if_3g
+      when 1 then '3G'
+      when 0 then '2G'
+    end
+  end
+  def status_name
+    self.service_status.name
+  end
 end
