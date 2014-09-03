@@ -29,4 +29,5 @@ class Dealer < ActiveRecord::Base
                        :status_change_date,
                        :change_date,
                        :remark
+  has_many :service_relations, :foreign_key => "developer_dealer"
 end
