@@ -16,4 +16,5 @@ class Developer < ActiveRecord::Base
                        :bss_sys_code2,
                        :f_employee_id,
                        :group_acct
+  has_many :service_relations, :foreign_key => "developer"
 end

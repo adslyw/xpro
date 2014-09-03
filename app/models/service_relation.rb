@@ -93,4 +93,9 @@ class ServiceRelation < ActiveRecord::Base
   belongs_to :service_status, :foreign_key => "serving_status"
   belongs_to :prod, :foreign_key => "service_favour_id"
   belongs_to :dealer, :foreign_key => "developer_dealer"
+  belongs_to :developer, :foreign_key => "developer"
+
+  default_scope where(:if_valid => 1)
+  scope :innet, where(:if_valid => 1)
+  scope :offnet, where(:if_valid => 0)
 end
