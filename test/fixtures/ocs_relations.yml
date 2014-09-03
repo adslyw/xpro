@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  service_id: MyString
+  service_state: MyString
+  first_active_date: 2014-09-03
+
+two:
+  service_id: MyString
+  service_state: MyString
+  first_active_date: 2014-09-03
