@@ -125,6 +125,21 @@ class ServiceRelation < ActiveRecord::Base
     end
   end
   def status_name
-    self.service_status.name
+    if type != 2
+      self.service_status.name
+    else
+      self.ocs_relation.status
+    end
+  end
+  def birthday
+    if self.service_kind.service_kind == 9
+      if type != 2
+        apply_start_date
+      else
+        self.ocs_relation.first_act_date
+      end
+    else
+      complete_date
+    end
   end
 end
