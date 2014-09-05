@@ -1,4 +1,6 @@
 Dba::Application.routes.draw do
+  get "customer/info"
+
   resources :prods
 
 
@@ -32,6 +34,7 @@ Dba::Application.routes.draw do
   match '/dblink',  to: 'database#mkdblink',  via: 'get'
   match '/home',   to: 'home#index',          via: 'get'
   match 'assets/get/:id', to: 'assets#get', :as => 'download'
+  match '/customer/info', to: 'customer#info', via: 'post', :as => 'costomer_info'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
