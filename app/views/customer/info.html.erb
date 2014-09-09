@@ -47,7 +47,11 @@
         <%= @customer.service_name %>
       </td>
       <td>
-        <%= @customer.pay_type %>
+        <% if @customer.pay_type == 2%>
+          预付费
+        <% else %>
+          后付费
+        <% end %>
       </td>
       <td>
         <%= @customer.if_3g %>

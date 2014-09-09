@@ -96,6 +96,7 @@ class ServiceRelation < ActiveRecord::Base
   belongs_to :developer, :foreign_key => "developer"
   belongs_to :area, :foreign_key => "belong_code"
   belongs_to :ocs_relation, :foreign_key => 'service_id'
+  belongs_to :customer, :foreign_key => "customer_id"
   default_scope where(:if_valid => 1)
   scope :innet, where(:if_valid => 1)
   scope :offnet, where(:if_valid => 0)
@@ -117,6 +118,9 @@ class ServiceRelation < ActiveRecord::Base
   end
   def prod_name
     self.prod.f_prod_name
+  end
+  def first_name
+    self.customer.first_name
   end
   def if_3g
     case self.prod.f_if_3g
