@@ -1,15 +1,21 @@
 <%if bcv_updated?(@when_bcv_updated) %>
-  BCV数据库已经更新</br>
+  <div class="alert alert-success" role="alert">
+    BCV已经更新。
+  </div>
 <% else %>
-  注意BCV数据库没有更新</br>
+  <div class="alert alert-warning">
+    注意BCV没有更新！
+  </div>
 <% end %>
-<i class="fa fa-history">&nbspBCV数据库更新时间：</i><%=  @when_bcv_updated %>
+<div class="alert alert-info">
+  <i class="fa fa-history">&nbspBCV更新于：</i><%=  @when_bcv_updated %>
+</div>
 <% if dblink_bill2crm_existed? %>
-   <p>
-     数据库链接bill2crm已经存在
-   </p>
+   <div class="alert alert-success">
+     数据库链接正常。
+   </div>
 <% else %>
-   <p>
-     数据库链接bill2crm不存在，现在就<%= link_to "创建", dblink_path %>吗？
-   </p>
+   <div class="alert alert-danger">
+     数据库链接不存在，<%= link_to "立即创建", dblink_path %>吗？
+   </div>
 <% end %>

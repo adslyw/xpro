@@ -4,12 +4,13 @@
   <input id="service_id" name="service_id" type="text" />
   <input name="commit" type="submit" value="查询" />
 </form>
-
+<br/>
 <% if @customer %>
+  <span class="label label-info"><%= @customer.service_id %></span>
   <table class="table">
     <tr>
       <th>
-        服务号码
+        用户名
       </th>
       <th>
         业务类型
@@ -19,6 +20,9 @@
       </th>
       <th>
         套餐类型
+      </th>
+      <th>
+        套餐
       </th>
       <th>
         县分网格
@@ -33,15 +37,12 @@
         状态
       </th>
       <th>
-        套餐
-      </th>
-      <th>
         入网日期
       </th>
     </tr>
     <tr>
       <td>
-        <%= @customer.service_id %>
+        <%= @customer.first_name %>
       </td>
       <td>
         <%= @customer.service_name %>
@@ -57,6 +58,9 @@
         <%= @customer.if_3g %>
       </td>
       <td>
+        <%= @customer.prod_name %>
+      </td>
+      <td>
         <%= @customer.area_name %>
       </td>
       <td>
@@ -69,10 +73,7 @@
         <%= @customer.status_name %>
       </td>
       <td>
-        <%= @customer.prod_name %>
-      </td>
-      <td>
-        <%= @customer.birthday %>
+        <%= @customer.birthday.localtime.to_s(:db) %>
       </td>
     </tr>
   </table>

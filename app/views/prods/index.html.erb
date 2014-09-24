@@ -1,11 +1,11 @@
 <%= will_paginate @assets, :class => 'apple_pagination' %>
 <table class="table table-condensed">
   <tr>
-    <th>F prod</th>
-    <th>F prod name</th>
-    <th>F if 3g</th>
-    <th>F prod type</th>
-    <th>F service kind</th>
+    <th>产品ID</th>
+    <th>产品名称</th>
+    <th>是否3G</th>
+    <th>套餐类型</th>
+    <th>业务类型</th>
     <th></th>
     <th></th>
     <th></th>
@@ -18,7 +18,7 @@
     <td><%= prod.f_if_3g %></td>
     <td><%= prod.f_prod_type %></td>
     <td><%= prod.f_service_kind %></td>
-    <td><%= link_to 'Show', prod %></td>
+    <td><%= link_to '详情', prod %></td>
   </tr>
 <% end %>
 </table>
