@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  city_code: MyString
+  service_kind: MyString
+  service_id: MyString
+  input_time: MyString
+  in_flag: MyString
+
+two:
+  city_code: MyString
+  service_kind: MyString
+  service_id: MyString
+  input_time: MyString
+  in_flag: MyString
