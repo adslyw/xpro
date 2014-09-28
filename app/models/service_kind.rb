@@ -7,5 +7,5 @@ class ServiceKind < ActiveRecord::Base
                        :limit_control, :credit_control, :have_call_limit,
                        :pay_order
   has_many :service_relations,  :foreign_key => "service_kind"
-
+  has_many :red_users, :foreign_key => "service_kind"
 end
