@@ -98,12 +98,17 @@ class ServiceRelation < ActiveRecord::Base
   belongs_to :ocs_relation, :foreign_key => 'service_id'
   belongs_to :customer, :foreign_key => "customer_id"
   belongs_to :gsm_fee, :foreign_key => "user_id"
+  belongs_to :red_user, :foreign_key => "service_id"
   default_scope where(:if_valid => 1)
   scope :innet, where(:if_valid => 1)
   scope :offnet, where(:if_valid => 0)
 
   def type
-    pay_type
+    if pay_type == 2
+      'OCS'
+    else
+      'GSM'
+    end
   end
   def service_name
     self.service_kind.service_name
@@ -146,5 +151,19 @@ class ServiceRelation < ActiveRecord::Base
     else
       complete_date
     end
+  end
+  def info
+    {
+      service_id: self.service_id,
+      service_type: self.type,
+      service_name: self.service_name,
+      first_name: self.first_name,
+      area_name: self.area_name,
+      dealer_name: self.dealer_name,
+      developer_name: self.developer_name,
+      f_if_3g: self.if_3g,
+      prod_name: self.prod_name,
+      birthday: self.birthday
+    }
   end
 end
