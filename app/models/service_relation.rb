@@ -114,13 +114,25 @@ class ServiceRelation < ActiveRecord::Base
     self.service_kind.service_name
   end
   def developer_name
-    self.developer.dev_name
+    begin
+      self.developer.dev_name
+    rescue
+      ""
+    end    
   end
   def dealer_name
-    self.dealer.dealer_name
+    begin
+      self.dealer.dealer_name
+    rescue
+      ""
+    end
   end
   def area_name
-    self.area.f_area_name
+    begin
+      self.area.f_area_name
+    rescue
+      ""
+    end
   end
   def prod_name
     self.prod.f_prod_name

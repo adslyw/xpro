@@ -1,0 +1,89 @@
+<h1>客户信息查询</h1>
+<form accept-charset="UTF-8" action="/customer/info_by_prefix" method="post">
+  <label for="q">号段:</label>
+  <input id="service_id_prefix" name="service_id_prefix" type="text" />
+  <input name="commit" type="submit" value="查询" />
+</form>
+<br/>
+
+<% if @customers%>
+  <table class="table">
+    <tr>
+      <th>
+        号码
+      </th>
+      <th>
+        用户名
+      </th>
+      <th>
+        业务类型
+      </th>
+      <th>
+        付费类型
+      </th>
+      <th>
+        套餐类型
+      </th>
+      <th>
+        套餐
+      </th>
+      <th>
+        县分网格
+      </th>
+      <th>
+        渠道
+      </th>
+      <th>
+        发展人
+      </th>
+      <th>
+        状态
+      </th>
+      <th>
+        入网日期
+      </th>
+    </tr>
+  <% @customers.each do |customer| %>
+
+      <tr>
+        <td>
+          <%= customer.id %>
+        </td>
+        <td>
+          <%= customer.first_name %>
+        </td>
+        <td>
+          <%= customer.service_name %>
+        </td>
+        <td>
+          <% if customer.pay_type == 2%>
+            预付费
+          <% else %>
+            后付费
+          <% end %>
+        </td>
+        <td>
+          <%= customer.if_3g %>
+        </td>
+        <td>
+          <%= customer.prod_name %>
+        </td>
+        <td>
+          <%= customer.area_name %>
+        </td>
+        <td>
+          <%= customer.dealer_name %>
+        </td>
+        <td>
+          <%= customer.developer_name %>
+        </td>
+        <td>
+          <%= customer.status_name %>
+        </td>
+        <td>
+          <%= customer.birthday.localtime.to_s(:db) %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
