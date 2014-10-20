@@ -118,7 +118,7 @@ class ServiceRelation < ActiveRecord::Base
       self.developer.dev_name
     rescue
       ""
-    end    
+    end
   end
   def dealer_name
     begin
@@ -147,10 +147,10 @@ class ServiceRelation < ActiveRecord::Base
     end
   end
   def status_name
-    if type != 2
+    if pay_type != 2
       self.service_status.name
     else
-      self.ocs_relation.status
+      self.ocs_relation.state_name
     end
   end
   def birthday
