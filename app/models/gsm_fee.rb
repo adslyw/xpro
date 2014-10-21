@@ -11,4 +11,7 @@ class GsmFee < ActiveRecord::Base
   def fee
     (self.fee1 + self.fee2 + self.fee3 + self.fee4 + self.fee11 + self.fee12 + self.fee13 + self.fee14).to_f
   end
+  def fee_name
+    FeeKind.where(:service_kind => self.service_kind,:fee_id => self.fee_kind).first.fee_name
+  end
 end
