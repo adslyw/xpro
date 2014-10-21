@@ -15,6 +15,13 @@ class CustomerController < ApplicationController
       end
     end
   end
+  def bill
+    @fees = GsmFee.where(:user_id => params[:user_id])
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @fees }
+    end
+  end
   def info_by_prefix
     if params[:service_id_prefix]
       begin

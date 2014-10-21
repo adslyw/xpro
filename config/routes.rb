@@ -36,6 +36,7 @@ Dba::Application.routes.draw do
   match 'assets/get/:id', to: 'assets#get', :as => 'download'
   match '/customer/info', to: 'customer#info', via: 'post', :as => 'costomer_info'
   match '/customer/info_by_prefix', to: 'customer#info_by_prefix', via: 'post', :as => 'costomer_info_by_prefix'
+  match '/customer/bill', to: 'customer#bill', via: 'post', :as => 'costomer_bill'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
