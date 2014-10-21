@@ -97,7 +97,7 @@ class ServiceRelation < ActiveRecord::Base
   belongs_to :area, :foreign_key => "belong_code"
   belongs_to :ocs_relation, :foreign_key => 'service_id'
   belongs_to :customer, :foreign_key => "customer_id"
-  belongs_to :gsm_fee, :foreign_key => "user_id"
+  has_many :gsm_fees, :primary_key => "user_id", :foreign_key => "user_id"
   belongs_to :red_user, :foreign_key => "service_id"
   default_scope where(:if_valid => 1)
   scope :innet, where(:if_valid => 1)
