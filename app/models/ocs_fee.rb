@@ -5,4 +5,12 @@ class OcsFee < ActiveRecord::Base
   set_primary_key :user_id
   ignore_table_columns :region_code,
                        :special_bill
+  default_scope where(:fee_date => Time.now.strftime("%Y%m"))
+  scope :month, where(:fee_date => 1.month.ago.strftime("%Y%m"))
+  def fee
+   (self.fee1 + self.fee2 + self.fee3 + self.fee4 + self.fee11 + self.fee12 + self.fee13 + self.fee14).to_f
+  end
+  def fee_name
+   FeeKind.where(:service_kind => self.service_kind,:fee_id => self.fee_kind).first.fee_name
+  end
 end

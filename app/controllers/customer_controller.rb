@@ -16,7 +16,11 @@ class CustomerController < ApplicationController
     end
   end
   def bill
-    @fees = GsmFee.where(:user_id => params[:user_id])
+    if params[:pay_type] == '2'
+      @fees = OcsFee.where(:user_id => params[:user_id])
+    else
+      @fees = GsmFee.where(:user_id => params[:user_id])
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @fees }
