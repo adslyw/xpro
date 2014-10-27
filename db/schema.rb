@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141027043342) do
+ActiveRecord::Schema.define(:version => 20141027064815) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(:version => 20141027043342) do
   end
 
   add_index "assets", ["user_id"], :name => "index_assets_on_user_id"
+
+  create_table "cb_products", :id => false, :force => true do |t|
+    t.string "product_id",   :limit => 10
+    t.string "product_name", :limit => 200
+    t.string "product_mode", :limit => 20
+  end
+
+  add_index "cb_products", ["product_id"], :name => "index_cb_products_on_product_id"
 
   create_table "menus", :force => true do |t|
     t.string   "title"
