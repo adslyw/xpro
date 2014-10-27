@@ -14,11 +14,11 @@ class CreateCbCharges < ActiveRecord::Migration
       t.string :is_group_item, :limit => 1
       t.string :charge_code, :limit => 10
       t.string :charge_code_sum, :limit => 10
-      t.decimal :acct_fee
-      t.decimal :b_discnt
-      t.decimal :a_discnt
-      t.decimal :adjust_before
-      t.decimal :adjust_after
+      t.decimal :acct_fee, precision: 15, scale: 2
+      t.decimal :b_discnt, precision: 15, scale: 2
+      t.decimal :a_discnt, precision: 15, scale: 2
+      t.decimal :adjust_before, precision: 15, scale: 2
+      t.decimal :adjust_after, precision: 15, scale: 2
     end
     add_index :cb_charges, :user_id
     add_index :cb_charges, :cust_id
