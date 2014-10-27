@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  area_id: MyString
+  area_id_cbss: MyString
+  city_id: MyString
+  city_id_cbss: MyString
+  user_id: MyString
+  cust_id: MyString
+  acct_id: MyString
+  device_number: MyString
+  service_type: MyString
+  owe_bill_flag: MyString
+  is_group_item: MyString
+  charge_code: MyString
+  charge_code_sum: MyString
+  acct_fee: 9.99
+  b_discnt: 9.99
+  a_discnt: 9.99
+  adjust_before: 9.99
+  adhust_after: 9.99
+
+two:
+  area_id: MyString
+  area_id_cbss: MyString
+  city_id: MyString
+  city_id_cbss: MyString
+  user_id: MyString
+  cust_id: MyString
+  acct_id: MyString
+  device_number: MyString
+  service_type: MyString
+  owe_bill_flag: MyString
+  is_group_item: MyString
+  charge_code: MyString
+  charge_code_sum: MyString
+  acct_fee: 9.99
+  b_discnt: 9.99
+  a_discnt: 9.99
+  adjust_before: 9.99
+  adhust_after: 9.99

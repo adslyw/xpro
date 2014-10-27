@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141027064815) do
+ActiveRecord::Schema.define(:version => 20141027080450) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id"
@@ -24,6 +24,31 @@ ActiveRecord::Schema.define(:version => 20141027064815) do
   end
 
   add_index "assets", ["user_id"], :name => "index_assets_on_user_id"
+
+  create_table "cb_charges", :id => false, :force => true do |t|
+    t.string  "area_id",         :limit => 20
+    t.string  "area_id_cbss",    :limit => 20
+    t.string  "city_id",         :limit => 20
+    t.string  "city_id_cbss",    :limit => 20
+    t.string  "user_id",         :limit => 40
+    t.string  "cust_id",         :limit => 40
+    t.string  "acct_id",         :limit => 20
+    t.string  "device_number",   :limit => 60
+    t.string  "service_type",    :limit => 20
+    t.string  "owe_bill_flag",   :limit => 4
+    t.string  "is_group_item",   :limit => 1
+    t.string  "charge_code",     :limit => 10
+    t.string  "charge_code_sum", :limit => 10
+    t.decimal "acct_fee",                      :precision => 10, :scale => 0
+    t.decimal "b_discnt",                      :precision => 10, :scale => 0
+    t.decimal "a_discnt",                      :precision => 10, :scale => 0
+    t.decimal "adjust_before",                 :precision => 10, :scale => 0
+    t.decimal "adjust_after",                  :precision => 10, :scale => 0
+  end
+
+  add_index "cb_charges", ["acct_id"], :name => "index_cb_charges_on_acct_id"
+  add_index "cb_charges", ["cust_id"], :name => "index_cb_charges_on_cust_id"
+  add_index "cb_charges", ["user_id"], :name => "index_cb_charges_on_user_id"
 
   create_table "cb_products", :id => false, :force => true do |t|
     t.string "product_id",   :limit => 10
