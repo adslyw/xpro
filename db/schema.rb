@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141027014717) do
+ActiveRecord::Schema.define(:version => 20141027043342) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id"
@@ -149,6 +149,7 @@ ActiveRecord::Schema.define(:version => 20141027014717) do
   end
 
   add_index "user_infos", ["cust_id"], :name => "index_user_infos_on_cust_id"
+  add_index "user_infos", ["device_integer"], :name => "index_user_infos_on_device_integer"
   add_index "user_infos", ["usecust_id"], :name => "index_user_infos_on_usecust_id"
   add_index "user_infos", ["user_id"], :name => "index_user_infos_on_user_id"
 
