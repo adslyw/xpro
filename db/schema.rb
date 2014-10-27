@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141027080450) do
+ActiveRecord::Schema.define(:version => 20141027083853) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20141027080450) do
     t.decimal "a_discnt",                      :precision => 10, :scale => 0
     t.decimal "adjust_before",                 :precision => 10, :scale => 0
     t.decimal "adjust_after",                  :precision => 10, :scale => 0
+    t.string  "fee_date",        :limit => 6
   end
 
   add_index "cb_charges", ["acct_id"], :name => "index_cb_charges_on_acct_id"
