@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141027083853) do
+ActiveRecord::Schema.define(:version => 20141027090043) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id"
@@ -180,6 +180,7 @@ ActiveRecord::Schema.define(:version => 20141027083853) do
     t.string  "is_this_break",        :limit => 2
     t.string  "is_change",            :limit => 2
     t.string  "is_group",             :limit => 2
+    t.string  "fee_date",             :limit => 6
   end
 
   add_index "user_infos", ["cust_id"], :name => "index_user_infos_on_cust_id"
