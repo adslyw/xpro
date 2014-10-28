@@ -102,7 +102,7 @@ class ServiceRelation < ActiveRecord::Base
   default_scope where(:if_valid => 1)
   scope :innet, where(:if_valid => 1)
   scope :offnet, where(:if_valid => 0)
-
+  scope :bundled, where("bundle_id != 0")
   def type
     if pay_type == 2
       'OCS'
@@ -164,6 +164,12 @@ class ServiceRelation < ActiveRecord::Base
       complete_date
     end
   end
+  def if_bundled?
+    self.bundle_id != 0
+  end
+  def bundled_users
+    ServiceRelation.where(:bundle_id => self.bundle_id)
+  end
   def info
     {
       service_id: self.service_id,
@@ -175,7 +181,8 @@ class ServiceRelation < ActiveRecord::Base
       developer_name: self.developer_name,
       f_if_3g: self.if_3g,
       prod_name: self.prod_name,
-      birthday: self.birthday
+      birthday: self.birthday,
+      status_name: self.status_name
     }
   end
 end
