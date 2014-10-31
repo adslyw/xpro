@@ -11,6 +11,7 @@ gem 'paperclip', '~> 4.1'
 gem 'will_paginate', '~> 3.0'
 gem 'acts_as_xlsx'
 gem 'activerecord-oracle_enhanced-adapter', '~> 1.4.0'
+gem 'bootstrap-wysihtml5-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -41,6 +41,8 @@ GEM
     bcrypt-ruby (3.0.1)
     bootstrap-sass (3.2.0.0)
       sass (~> 3.2)
+    bootstrap-wysihtml5-rails (0.3.3.1)
+      railties (>= 3.0)
     builder (3.0.4)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -151,6 +153,7 @@ DEPENDENCIES
   acts_as_xlsx
   bcrypt-ruby (~> 3.0.1)
   bootstrap-sass (~> 3.2.0)
+  bootstrap-wysihtml5-rails
   coffee-rails (~> 3.2.1)
   debugger
   font-awesome-sass
