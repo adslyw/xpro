@@ -5,7 +5,7 @@ module AssetsHelper
         when /png\Z/i then 'fa fa-picture-o'
         when /gif\Z/i then 'fa fa-picture-o'
         when /csv\Z/i then 'fa fa-file-text-o'
-        when /text\Z/i then 'fa fa-file-text-o'
+        when /txt\Z/i then 'fa fa-file-text-o'
         when /pdf\Z/i then 'fa fa-file-pdf-o'
         when /docx?\Z/i then 'fa fa-file-word-o'
         when /pptx?\Z/i then 'fa fa-file-powerpoint-o'
@@ -16,6 +16,6 @@ module AssetsHelper
         when /flv\Z/i then 'fa fa-film'
         when /mp3\Z/i then 'fa fa-music'
         when /ogg\Z/i then 'fa fa-music'
-      end      
+      end
   end
 end

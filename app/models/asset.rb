@@ -6,7 +6,7 @@ class Asset < ActiveRecord::Base
       /png\Z/i,
       /gif\Z/i,
       /csv\Z/i,
-      /text\Z/i,
+      /txt\Z/i,
       /pdf\Z/i,
       /docx?\Z/i,
       /pptx?\Z/i,
