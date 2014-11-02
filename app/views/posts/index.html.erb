@@ -6,9 +6,7 @@
       <%= gravatar_for(current_user) %>
     </a>
     <div class="post-body">
-      <a href="#">
-        <h2 class="post-heading"><%= post.title %></h2>
-      </a>
+      <%= link_to post.title, post, class: " h2 post-heading" %></br>
       <%= post.body.html_safe %>
     </div>
     <div class="post-footer">

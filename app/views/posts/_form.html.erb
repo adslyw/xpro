@@ -12,14 +12,14 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.label :title,"标题" %>
+    <%= f.text_field :title, :size => '126' %>
   </div>
   <div class="field">
-    <%= f.label :body %><br />
-    <%= f.input :body, :class => "wysihtml5" %>
+    <br />
+    <%= f.text_area :body,:size => "125x25", :class => "wysihtml5" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :value => "更新" %>
   </div>
 <% end %>
