@@ -1,0 +1,3 @@
+class CbAct < ActiveRecord::Base
+  attr_accessible :accept_time, :activity_id, :activity_subs_id, :activity_type, :activity_type_cbss, :allowance_fee, :area_id, :area_id_cbss, :channel_id, :channel_type, :city_id, :city_id_cbss, :cust_type, :deposit_fee, :deposit_type, :device_number, :end_date, :fee_date, :is_card, :is_this_add, :is_this_break, :is_this_dev, :is_this_expire, :is_this_innet, :is_this_lost, :is_valid, :mon_limit_charge, :mon_return_rate, :pay_mode, :pre_fee, :present_fee, :product_class, :product_id, :protocal_month, :res_belong_type, :res_brand, :res_brand_cbss, :res_cost, :res_imei, :res_mode, :res_mode_cbss, :res_num, :res_price, :res_type, :service_type, :start_date, :user_id, :user_type
+end

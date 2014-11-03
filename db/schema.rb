@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141027090043) do
+ActiveRecord::Schema.define(:version => 20141103011929) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id"
@@ -24,6 +24,57 @@ ActiveRecord::Schema.define(:version => 20141027090043) do
   end
 
   add_index "assets", ["user_id"], :name => "index_assets_on_user_id"
+
+  create_table "cb_acts", :id => false, :force => true do |t|
+    t.string  "area_id",            :limit => 20
+    t.string  "area_id_cbss",       :limit => 20
+    t.string  "city_id",            :limit => 20
+    t.string  "city_id_cbss",       :limit => 20
+    t.string  "activity_subs_id",   :limit => 20
+    t.string  "service_type",       :limit => 20
+    t.string  "user_id",            :limit => 40
+    t.string  "device_number",      :limit => 60
+    t.string  "pay_mode",           :limit => 10
+    t.string  "user_type",          :limit => 30
+    t.string  "channel_id",         :limit => 30
+    t.string  "cust_type",          :limit => 2
+    t.string  "product_id",         :limit => 20
+    t.string  "product_class",      :limit => 30
+    t.string  "activity_type_cbss", :limit => 50
+    t.string  "activity_id",        :limit => 50
+    t.string  "activity_type",      :limit => 50
+    t.string  "protocal_month",     :limit => 10
+    t.string  "mon_limit_charge",   :limit => 20
+    t.string  "res_type",           :limit => 50
+    t.string  "res_belong_type",    :limit => 2
+    t.string  "res_imei",           :limit => 20
+    t.string  "res_brand",          :limit => 50
+    t.string  "res_brand_cbss",     :limit => 50
+    t.string  "res_mode",           :limit => 50
+    t.string  "res_mode_cbss",      :limit => 50
+    t.decimal "res_num",                           :precision => 15, :scale => 2
+    t.string  "res_cost",           :limit => 256
+    t.decimal "res_price",                         :precision => 15, :scale => 2
+    t.decimal "allowance_fee",                     :precision => 15, :scale => 2
+    t.decimal "deposit_fee",                       :precision => 15, :scale => 2
+    t.decimal "pre_fee",                           :precision => 15, :scale => 2
+    t.decimal "present_fee",                       :precision => 15, :scale => 2
+    t.decimal "mon_return_rate",                   :precision => 15, :scale => 2
+    t.string  "accept_time",        :limit => 14
+    t.string  "start_date",         :limit => 14
+    t.string  "end_date",           :limit => 14
+    t.string  "deposit_type",       :limit => 32
+    t.string  "is_valid",           :limit => 2
+    t.string  "is_this_expire",     :limit => 2
+    t.string  "is_this_innet",      :limit => 2
+    t.string  "is_this_add",        :limit => 2
+    t.string  "is_this_dev",        :limit => 2
+    t.string  "is_this_break",      :limit => 2
+    t.string  "is_this_lost",       :limit => 2
+    t.string  "is_card",            :limit => 2
+    t.string  "channel_type",       :limit => 10
+    t.string  "fee_date",           :limit => 6
+  end
 
   create_table "cb_charges", :id => false, :force => true do |t|
     t.string  "area_id",         :limit => 20
@@ -39,11 +90,11 @@ ActiveRecord::Schema.define(:version => 20141027090043) do
     t.string  "is_group_item",   :limit => 1
     t.string  "charge_code",     :limit => 10
     t.string  "charge_code_sum", :limit => 10
-    t.decimal "acct_fee",                      :precision => 10, :scale => 0
-    t.decimal "b_discnt",                      :precision => 10, :scale => 0
-    t.decimal "a_discnt",                      :precision => 10, :scale => 0
-    t.decimal "adjust_before",                 :precision => 10, :scale => 0
-    t.decimal "adjust_after",                  :precision => 10, :scale => 0
+    t.decimal "acct_fee",                      :precision => 15, :scale => 2
+    t.decimal "b_discnt",                      :precision => 15, :scale => 2
+    t.decimal "a_discnt",                      :precision => 15, :scale => 2
+    t.decimal "adjust_before",                 :precision => 15, :scale => 2
+    t.decimal "adjust_after",                  :precision => 15, :scale => 2
     t.string  "fee_date",        :limit => 6
   end
 
