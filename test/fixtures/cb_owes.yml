@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  area_id: MyString
+  area_id_cbss: MyString
+  city_id: MyString
+  city_id_cbss: MyString
+  user_id: MyString
+  acct_id: MyString
+  service_type: MyString
+  acct_month: MyString
+  owe_fee: 9.99
+  recover_fee: 9.99
+  fee_date: MyString
+
+two:
+  area_id: MyString
+  area_id_cbss: MyString
+  city_id: MyString
+  city_id_cbss: MyString
+  user_id: MyString
+  acct_id: MyString
+  service_type: MyString
+  acct_month: MyString
+  owe_fee: 9.99
+  recover_fee: 9.99
+  fee_date: MyString
