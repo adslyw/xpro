@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141104064253) do
+ActiveRecord::Schema.define(:version => 20141104070412) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id"
@@ -76,6 +76,10 @@ ActiveRecord::Schema.define(:version => 20141104064253) do
     t.string  "fee_date",           :limit => 6
   end
 
+  add_index "cb_acts", ["device_number"], :name => "index_cb_acts_on_device_number"
+  add_index "cb_acts", ["product_id"], :name => "index_cb_acts_on_product_id"
+  add_index "cb_acts", ["user_id"], :name => "index_cb_acts_on_user_id"
+
   create_table "cb_charges", :id => false, :force => true do |t|
     t.string  "area_id",         :limit => 20
     t.string  "area_id_cbss",    :limit => 20
@@ -115,6 +119,9 @@ ActiveRecord::Schema.define(:version => 20141104064253) do
     t.decimal "recover_fee",                :precision => 15, :scale => 2
     t.string  "fee_date",     :limit => 6
   end
+
+  add_index "cb_owes", ["acct_id"], :name => "index_cb_owes_on_acct_id"
+  add_index "cb_owes", ["user_id"], :name => "index_cb_owes_on_user_id"
 
   create_table "cb_products", :id => false, :force => true do |t|
     t.string "product_id",   :limit => 10
@@ -177,6 +184,10 @@ ActiveRecord::Schema.define(:version => 20141104064253) do
     t.integer "toll_nums"
     t.string  "fee_date",            :limit => 6
   end
+
+  add_index "cb_sings", ["acct_id"], :name => "index_cb_sings_on_acct_id"
+  add_index "cb_sings", ["cust_id"], :name => "index_cb_sings_on_cust_id"
+  add_index "cb_sings", ["user_id"], :name => "index_cb_sings_on_user_id"
 
   create_table "menus", :force => true do |t|
     t.string   "title"
