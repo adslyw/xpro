@@ -1,4 +1,4 @@
-class UserInfo < ActiveRecord::Base
+class CbUser < ActiveRecord::Base
   attr_accessible :active_type,
                   :add_type,
                   :area_id,
@@ -72,5 +72,6 @@ class UserInfo < ActiveRecord::Base
                   :user_status,
                   :user_status_cbss,
                   :user_type,
-                  :user_type_cbss
+                  :user_type_cbss,
+                  :fee_date
 end
