@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141104070412) do
+ActiveRecord::Schema.define(:version => 20141104082315) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id"
@@ -123,8 +123,7 @@ ActiveRecord::Schema.define(:version => 20141104070412) do
   add_index "cb_owes", ["acct_id"], :name => "index_cb_owes_on_acct_id"
   add_index "cb_owes", ["user_id"], :name => "index_cb_owes_on_user_id"
 
-  create_table "cb_products", :id => false, :force => true do |t|
-    t.string "product_id",   :limit => 10
+  create_table "cb_products", :primary_key => "product_id", :force => true do |t|
     t.string "product_name", :limit => 200
     t.string "product_mode", :limit => 20
   end
@@ -189,53 +188,7 @@ ActiveRecord::Schema.define(:version => 20141104070412) do
   add_index "cb_sings", ["cust_id"], :name => "index_cb_sings_on_cust_id"
   add_index "cb_sings", ["user_id"], :name => "index_cb_sings_on_user_id"
 
-  create_table "menus", :force => true do |t|
-    t.string   "title"
-    t.string   "icon"
-    t.string   "url"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "ocs_states", :id => false, :force => true do |t|
-    t.string   "service_state"
-    t.string   "state_name"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-  end
-
-  create_table "posts", :force => true do |t|
-    t.string   "title"
-    t.text     "body"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "products", :force => true do |t|
-    t.string   "f_prod_id"
-    t.string   "f_prod_name"
-    t.integer  "f_if_3g"
-    t.integer  "f_prod_type"
-    t.integer  "f_service_kind"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-  end
-
-  add_index "products", ["f_prod_id"], :name => "index_products_on_f_prod_id"
-  add_index "products", ["f_prod_name"], :name => "index_products_on_f_prod_name"
-
-  create_table "submenus", :force => true do |t|
-    t.string   "title"
-    t.string   "icon"
-    t.string   "url"
-    t.integer  "menu_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "submenus", ["menu_id"], :name => "index_submenus_on_menu_id"
-
-  create_table "user_infos", :id => false, :force => true do |t|
+  create_table "cb_users", :id => false, :force => true do |t|
     t.string  "user_id",              :limit => 40
     t.string  "cust_id",              :limit => 40
     t.string  "cust_type",            :limit => 2
@@ -313,10 +266,56 @@ ActiveRecord::Schema.define(:version => 20141104070412) do
     t.string  "fee_date",             :limit => 6
   end
 
-  add_index "user_infos", ["cust_id"], :name => "index_user_infos_on_cust_id"
-  add_index "user_infos", ["device_integer"], :name => "index_user_infos_on_device_integer"
-  add_index "user_infos", ["usecust_id"], :name => "index_user_infos_on_usecust_id"
-  add_index "user_infos", ["user_id"], :name => "index_user_infos_on_user_id"
+  add_index "cb_users", ["cust_id"], :name => "index_user_infos_on_cust_id"
+  add_index "cb_users", ["device_integer"], :name => "index_user_infos_on_device_integer"
+  add_index "cb_users", ["usecust_id"], :name => "index_user_infos_on_usecust_id"
+  add_index "cb_users", ["user_id"], :name => "index_user_infos_on_user_id"
+
+  create_table "menus", :force => true do |t|
+    t.string   "title"
+    t.string   "icon"
+    t.string   "url"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "ocs_states", :id => false, :force => true do |t|
+    t.string   "service_state"
+    t.string   "state_name"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "posts", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "products", :force => true do |t|
+    t.string   "f_prod_id"
+    t.string   "f_prod_name"
+    t.integer  "f_if_3g"
+    t.integer  "f_prod_type"
+    t.integer  "f_service_kind"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "products", ["f_prod_id"], :name => "index_products_on_f_prod_id"
+  add_index "products", ["f_prod_name"], :name => "index_products_on_f_prod_name"
+
+  create_table "submenus", :force => true do |t|
+    t.string   "title"
+    t.string   "icon"
+    t.string   "url"
+    t.integer  "menu_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "submenus", ["menu_id"], :name => "index_submenus_on_menu_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"
