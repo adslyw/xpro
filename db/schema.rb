@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141104082315) do
+ActiveRecord::Schema.define(:version => 20141105072829) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id"
@@ -79,6 +79,16 @@ ActiveRecord::Schema.define(:version => 20141104082315) do
   add_index "cb_acts", ["device_number"], :name => "index_cb_acts_on_device_number"
   add_index "cb_acts", ["product_id"], :name => "index_cb_acts_on_product_id"
   add_index "cb_acts", ["user_id"], :name => "index_cb_acts_on_user_id"
+
+  create_table "cb_areas", :id => false, :force => true do |t|
+    t.string "area_code",        :limit => 8
+    t.string "area_name",        :limit => 100
+    t.string "user_area_code",   :limit => 10
+    t.string "parent_area_code", :limit => 8
+    t.string "start_date",       :limit => 14
+    t.string "end_date",         :limit => 14
+    t.string "area_level",       :limit => 2
+  end
 
   create_table "cb_charges", :id => false, :force => true do |t|
     t.string  "area_id",         :limit => 20

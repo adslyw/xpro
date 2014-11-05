@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  area_code: MyString
+  area_name: MyString
+  user_area_code: MyString
+  parent_area_code: MyString
+  start_date: MyString
+  end_date: MyString
+  area_level: MyString
+
+two:
+  area_code: MyString
+  area_name: MyString
+  user_area_code: MyString
+  parent_area_code: MyString
+  start_date: MyString
+  end_date: MyString
+  area_level: MyString
