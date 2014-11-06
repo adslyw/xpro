@@ -99,6 +99,7 @@ class ServiceRelation < ActiveRecord::Base
   belongs_to :customer, :foreign_key => "customer_id"
   has_many :gsm_fees, :primary_key => "user_id", :foreign_key => "user_id"
   belongs_to :red_user, :foreign_key => "service_id"
+  has_many :bundle_relations, :primary_key => "user_id",  :foreign_key => "user_id"
   default_scope where(:if_valid => 1)
   scope :innet, where(:if_valid => 1)
   scope :offnet, where(:if_valid => 0)

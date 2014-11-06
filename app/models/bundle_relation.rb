@@ -4,4 +4,5 @@ class BundleRelation < ActiveRecord::Base
   set_table_name "BB_BUNDLE_RELATION_T"
   set_primary_key :user_id
   default_scope where(:if_valid => 1, :city_code => '847')
+  belongs_to :service_relation,:primary_key => "user_id", :foreign_key => "user_id"
 end
