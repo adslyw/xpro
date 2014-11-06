@@ -99,7 +99,7 @@ class ServiceRelation < ActiveRecord::Base
   belongs_to :customer, :foreign_key => "customer_id"
   has_many :gsm_fees, :primary_key => "user_id", :foreign_key => "user_id"
   belongs_to :red_user, :foreign_key => "service_id"
-  has_many :bundle_relations, :primary_key => "user_id",  :foreign_key => "user_id"
+  has_one :bundle_relation, :primary_key => "user_id",  :foreign_key => "user_id"
   default_scope where(:if_valid => 1)
   scope :innet, where(:if_valid => 1)
   scope :offnet, where(:if_valid => 0)
@@ -165,11 +165,21 @@ class ServiceRelation < ActiveRecord::Base
       complete_date
     end
   end
-  def if_bundled?
-    self.bundle_id != 0
+  def if_bundled
+    if self.bundle_relation.nil?
+      return 0
+    else
+      return 1
+    end
   end
   def bundled_users
-    ServiceRelation.where(:bundle_id => self.bundle_id)
+    BundleRelation.where(:bundle_id => self.bundle_id).where('user_id <> ?', self.user_id)
+  end
+  def bundle_type
+    #self.bundle_relation.bundle_type
+  end
+  def if_primary_card
+    self.bundle_relation.if_baseno
   end
   def info
     {
