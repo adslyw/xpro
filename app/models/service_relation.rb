@@ -100,6 +100,7 @@ class ServiceRelation < ActiveRecord::Base
   has_many :gsm_fees, :primary_key => "user_id", :foreign_key => "user_id"
   belongs_to :red_user, :foreign_key => "service_id"
   has_one :bundle_relation, :primary_key => "user_id",  :foreign_key => "user_id"
+  has_one :group_user, :primary_key => "user_id", :foreign_key => "user_id"
   default_scope where(:if_valid => 1)
   scope :innet, where(:if_valid => 1)
   scope :offnet, where(:if_valid => 0)
@@ -187,7 +188,14 @@ class ServiceRelation < ActiveRecord::Base
       self.bundle_relation.if_baseno
     rescue
       ""
-    end    
+    end
+  end
+  def if_group_user
+    if self.group_user.nil?
+      return 0
+    else
+      return 1
+    end
   end
   def info
     {

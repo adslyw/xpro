@@ -4,4 +4,5 @@ class GroupUser < ActiveRecord::Base
   set_table_name "BB_GROUP_USER_INFO_T"
   set_primary_key :user_id
   default_scope where(:if_valid => 1)
+  belongs_to :service_relation, :primary_key => "user_id", :foreign_key => "user_id"
 end
