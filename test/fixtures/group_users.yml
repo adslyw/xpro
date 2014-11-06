@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  app_type: MyString
+  sub_app_type: MyString
+  city_code: MyString
+  home_code: MyString
+  service_id: MyString
+  service_kind: MyString
+  user_id: MyString
+  group_sys_id: MyString
+  join_date: MyString
+  quit_date: MyString
+  if_main: MyString
+  member_group_rela: MyString
+  operation_role: MyString
+  if_valid: MyString
+  developer: MyString
+  developer_dealer: MyString
+
+two:
+  app_type: MyString
+  sub_app_type: MyString
+  city_code: MyString
+  home_code: MyString
+  service_id: MyString
+  service_kind: MyString
+  user_id: MyString
+  group_sys_id: MyString
+  join_date: MyString
+  quit_date: MyString
+  if_main: MyString
+  member_group_rela: MyString
+  operation_role: MyString
+  if_valid: MyString
+  developer: MyString
+  developer_dealer: MyString
