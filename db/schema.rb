@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141105072829) do
+ActiveRecord::Schema.define(:version => 20141106072527) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id"
@@ -24,6 +24,13 @@ ActiveRecord::Schema.define(:version => 20141105072829) do
   end
 
   add_index "assets", ["user_id"], :name => "index_assets_on_user_id"
+
+  create_table "bundle_types", :id => false, :force => true do |t|
+    t.integer  "if_wo_family"
+    t.string   "name"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "cb_acts", :id => false, :force => true do |t|
     t.string  "area_id",            :limit => 20

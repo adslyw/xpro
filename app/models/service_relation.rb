@@ -176,7 +176,7 @@ class ServiceRelation < ActiveRecord::Base
     BundleRelation.where(:bundle_id => self.bundle_id).where('user_id <> ?', self.user_id)
   end
   def bundle_type
-    #self.bundle_relation.bundle_type
+    self.bundle_relation.type
   end
   def if_primary_card
     self.bundle_relation.if_baseno
