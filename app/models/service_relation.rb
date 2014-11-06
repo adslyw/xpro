@@ -197,6 +197,13 @@ class ServiceRelation < ActiveRecord::Base
       return 1
     end
   end
+  def group_name
+    begin
+      self.group_user.group_name
+    rescue
+      ""
+    end
+  end
   def info
     {
       service_id: self.service_id,
@@ -212,7 +219,9 @@ class ServiceRelation < ActiveRecord::Base
       status_name: self.status_name,
       if_bundled: self.if_bundled,
       if_primary_card: self.if_primary_card,
-      bundle_type: self.bundle_type
+      bundle_type: self.bundle_type,
+      if_group_user: self.if_group_user,
+      group_name: self.group_name
     }
   end
 end

@@ -5,4 +5,8 @@ class GroupUser < ActiveRecord::Base
   set_primary_key :user_id
   default_scope where(:if_valid => 1)
   belongs_to :service_relation, :primary_key => "user_id", :foreign_key => "user_id"
+  has_one :group_info, :primary_key => "group_sys_id", :foreign_key => "group_sys_id"
+  def group_name
+    self.group_info.group_name
+  end
 end
