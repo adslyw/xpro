@@ -193,7 +193,10 @@ class ServiceRelation < ActiveRecord::Base
       f_if_3g: self.if_3g,
       prod_name: self.prod_name,
       birthday: self.birthday,
-      status_name: self.status_name
+      status_name: self.status_name,
+      if_bundled: self.if_bundled,
+      if_primary_card: self.if_primary_card,
+      bundle_type: self.bundle_type
     }
   end
 end
