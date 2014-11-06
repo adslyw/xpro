@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  city_code: MyString
+  bundle_id: MyString
+  bundle_kind: MyString
+  service_kind: MyString
+  user_id: MyString
+  if_wo_family: MyString
+  primary_number: MyString
+  if_valid: MyString
+  beg_date: MyString
+  end_date: MyString
+  f_free_fee: MyString
+  if_share: MyString
+  user_type: MyString
+  if_baseno: MyString
+  join_accept_date: MyString
+  quit_accept_date: MyString
+  join_complete_date: MyString
+  quit_complete_date: MyString
+
+two:
+  city_code: MyString
+  bundle_id: MyString
+  bundle_kind: MyString
+  service_kind: MyString
+  user_id: MyString
+  if_wo_family: MyString
+  primary_number: MyString
+  if_valid: MyString
+  beg_date: MyString
+  end_date: MyString
+  f_free_fee: MyString
+  if_share: MyString
+  user_type: MyString
+  if_baseno: MyString
+  join_accept_date: MyString
+  quit_accept_date: MyString
+  join_complete_date: MyString
+  quit_complete_date: MyString
