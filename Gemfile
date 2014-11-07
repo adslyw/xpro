@@ -12,6 +12,7 @@ gem 'will_paginate', '~> 3.0'
 gem 'acts_as_xlsx'
 gem 'activerecord-oracle_enhanced-adapter', '~> 1.4.0'
 gem 'bootstrap-wysihtml5-rails'
+gem 'delayed_job_active_record'
 
 # Gems used only for assets and not required
 # in production environments by default.
