@@ -37,6 +37,8 @@ Dba::Application.routes.draw do
   match '/customer/info', to: 'customer#info', via: 'post', :as => 'costomer_info'
   match '/customer/info_by_prefix', to: 'customer#info_by_prefix', via: 'post', :as => 'costomer_info_by_prefix'
   match '/customer/bill', to: 'customer#bill', via: 'post', :as => 'costomer_bill'
+
+  match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
