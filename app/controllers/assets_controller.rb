@@ -92,4 +92,27 @@ class AssetsController < ApplicationController
     redirect_to assets_path
     end
   end
+  def add_description
+    @asset = current_user.assets.find_by_id(params[:id])
+    @input = Input.new
+    if @asset
+      respond_to do |format|
+        format.html
+      end
+    else
+      flash[:danger] = "Don't be cheeky! Mind your own assets!"
+      redirect_to assets_path
+    end
+  end
+  def input
+    @asset = current_user.assets.find_by_id(params[:input][:asset_id])
+    @input = @asset.inputs.new(:description => params[:input][:description])
+    if @input.save
+      flash.now[:danger] = "ok"
+      redirect_to assets_path
+    else
+      flash[:danger] = "Don't be cheeky! Mind your own assets!"
+      redirect_to assets_path
+    end
+  end
 end

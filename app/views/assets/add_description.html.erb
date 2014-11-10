@@ -1,0 +1,12 @@
+<%= form_tag('/assets/input', :method => "post") do |f| %>
+  <div class="field">
+    <%= hidden_field(:input,:asset_id, :value => "#{@asset.id}") %>
+  </div>
+  <div class="field">
+    <%= label_tag(:description, "备注") %>
+    <%= text_field(:input,:description) %>
+  </div>
+  <div class="actions">
+    <%= submit_tag("提交")%>
+  </div>
+<% end %>

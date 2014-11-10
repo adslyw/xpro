@@ -1,6 +1,7 @@
 class Asset < ActiveRecord::Base
   attr_accessible :user_id, :uploaded_file
   belongs_to :user
+  has_many :inputs
   @allowed_file_names = [
       /jpe?g\Z/i,
       /png\Z/i,
