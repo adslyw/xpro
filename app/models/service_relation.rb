@@ -204,8 +204,9 @@ class ServiceRelation < ActiveRecord::Base
       ""
     end
   end
-  def info
-    {
+  def info(*required)
+    required = *required
+    data = {
       service_id: self.service_id,
       service_type: self.type,
       service_name: self.service_name,
@@ -223,5 +224,10 @@ class ServiceRelation < ActiveRecord::Base
       if_group_user: self.if_group_user,
       group_name: self.group_name
     }
+    if required.empty?
+      return data
+    else
+      return data.slice(*required)
+    end
   end
 end
