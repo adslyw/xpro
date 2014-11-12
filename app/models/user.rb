@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   validates :password ,presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
   has_many :assets
+  has_many :posts
   def User.new_remember_token
     SecureRandom.urlsafe_base64
   end

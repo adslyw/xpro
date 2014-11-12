@@ -75,6 +75,7 @@ GEM
     execjs (2.0.2)
     font-awesome-sass (4.1.0)
       sass (~> 3.2)
+    gravatar_image_tag (1.2.0)
     hash-deep-merge (0.1.1)
     hike (1.2.3)
     htmlentities (4.3.2)
@@ -174,6 +175,7 @@ DEPENDENCIES
   delayed_job_active_record
   delayed_job_web
   font-awesome-sass
+  gravatar_image_tag
   jquery-rails
   lazy_high_charts
   mysql2

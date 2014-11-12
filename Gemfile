@@ -14,6 +14,7 @@ gem 'activerecord-oracle_enhanced-adapter', '~> 1.4.0'
 gem 'bootstrap-wysihtml5-rails'
 gem 'delayed_job_active_record'
 gem 'delayed_job_web'
+gem 'gravatar_image_tag'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

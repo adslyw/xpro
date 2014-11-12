@@ -3,7 +3,7 @@
 <% @posts.each do |post| %>
   <article class="post post-item">
     <a href="#" class="pull-right">
-      <%= gravatar_for(current_user) %>
+      <%= gravatar_image_tag(post.user.email,:alt => post.user.email, :gravatar => { :size => 50 }, :class => "img-circle") %>
     </a>
     <div class="post-body">
       <%= link_to post.title, post, class: " h2 post-heading" %></br>
