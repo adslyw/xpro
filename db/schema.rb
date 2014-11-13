@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141112073457) do
+ActiveRecord::Schema.define(:version => 20141112095036) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id"
@@ -328,6 +328,15 @@ ActiveRecord::Schema.define(:version => 20141112073457) do
     t.datetime "updated_at",    :null => false
   end
 
+  create_table "outputs", :force => true do |t|
+    t.integer  "asset_id"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "outputs", ["asset_id"], :name => "index_outputs_on_asset_id"
+
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "body"
@@ -361,6 +370,18 @@ ActiveRecord::Schema.define(:version => 20141112073457) do
   end
 
   add_index "submenus", ["menu_id"], :name => "index_submenus_on_menu_id"
+
+  create_table "tasks", :force => true do |t|
+    t.string   "description"
+    t.integer  "input_id"
+    t.integer  "output_id"
+    t.integer  "state"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "tasks", ["input_id"], :name => "index_tasks_on_input_id"
+  add_index "tasks", ["output_id"], :name => "index_tasks_on_output_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"

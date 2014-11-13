@@ -1,0 +1,39 @@
+<%= link_to '新建', new_input_path, :class => 'btn btn-success' %>
+<table class="table">
+  <tr>
+    <th>
+      编号
+    </th>
+    <th>
+      备注
+    </th>
+    <th>
+      附件
+    </th>
+    <th>
+      创建于
+    </th>
+    <th>
+      更新于
+    </th>
+  </tr>
+<% @inputs.each do |input| %>
+  <tr>
+    <td>
+      <%= input.id %>
+    </td>
+    <td>
+      <%= input.description %>
+    </td>
+    <td>
+      <%= link_to input.asset.file_name, download_path(input.asset)%>
+    </td>
+    <td>
+      <%= input.created_at.localtime.to_s(:db) %>
+    </td>
+    <td>
+      <%= input.updated_at.localtime.to_s(:db) %>
+    </td>
+  </tr>
+<% end %>
+</table>

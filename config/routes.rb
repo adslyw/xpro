@@ -24,6 +24,8 @@ Dba::Application.routes.draw do
   resources :submenus
   resources :posts
   resources :sessions, only: [:new, :create, :destroy]
+  resources :inputs
+  resources :tasks
   match '/bcv', to: 'database#index',          via: 'get'
   match '/signup',  to: 'users#new',           via: 'get'
   match '/login',  to: 'sessions#new',         via: 'get'

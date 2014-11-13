@@ -1,0 +1,53 @@
+<table class='table'>
+  <tr>
+    <th>
+      编号
+    </th>
+    <th>
+      状态
+    </th>
+    <th>
+      备注
+    </th>
+    <th>
+      输入文件
+    </th>
+    <th>
+      输出文件
+    </th>
+    <th>
+      创建于
+    </th>
+    <th>
+      更新于
+    </th>
+  </tr>
+  <% @tasks.each do |task| %>
+    <tr>
+      <td>
+        <%= task.id %>
+      </td>
+      <td>
+        <%= task.state %>
+      </td>
+      <td>
+        <%= task.description %>
+      </td>
+      <td>
+        <%= link_to task.input.asset.file_name, download_path(task.input.asset) %>
+      </td>
+      <td>
+        <% if task.output.nil? %>
+        <% else %>
+          <%= link_to task.output.asset.file_name,download_path(task.output.asset) %>
+        <% end %>
+      </td>
+      <td>
+        <%= task.created_at.localtime.to_s(:db) %>
+      </td>
+      <td>
+        <%= task.updated_at.localtime.to_s(:db) %>
+      </td>
+    </tr>
+  <% end %>
+</table>
