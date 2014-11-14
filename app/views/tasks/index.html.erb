@@ -48,6 +48,9 @@
       <td>
         <%= task.updated_at.localtime.to_s(:db) %>
       </td>
+      <td>
+        <%= link_to "执行", task_runner_path(task), method: :post %>
+      </td>
     </tr>
   <% end %>
 </table>

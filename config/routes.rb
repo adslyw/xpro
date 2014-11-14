@@ -39,6 +39,7 @@ Dba::Application.routes.draw do
   match 'assets/add_description/:id', to:'assets#add_description', via: 'get', :as => 'add_description'
   match 'assets/input', to:'assets#input', via: 'post'
   match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
+  match '/run/:id', to: 'tasks#run', via: 'post', :as => 'task_runner'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
