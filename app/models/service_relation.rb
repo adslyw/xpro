@@ -157,7 +157,7 @@ class ServiceRelation < ActiveRecord::Base
   end
   def birthday
     if self.service_kind.service_kind == 9
-      if type != 2
+      if pay_type != 2
         apply_start_date
       else
         self.ocs_relation.first_act_date
