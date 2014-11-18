@@ -24,4 +24,21 @@ class InputsController < ApplicationController
       render 'new'
     end
   end
+  def apply
+    @input = Input.find(params[:id])
+
+    respond_to do |format|
+      if @input
+        task = @input.tasks.new
+        task.state = 1
+        if task.save
+          format.html { redirect_to inputs_path, info: 'Apply successfully wait for check.'}
+        else
+          format.html { redirect_to inputs_path, error: 'Apply unsuccessfully'}
+        end
+      else
+        format.html { redirect_to inputs_path, error: 'input can\'t find'}
+      end
+    end
+  end
 end

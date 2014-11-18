@@ -16,6 +16,9 @@
     <th>
       更新于
     </th>
+    <th>
+      -
+    </th>
   </tr>
 <% @inputs.each do |input| %>
   <tr>
@@ -33,6 +36,9 @@
     </td>
     <td>
       <%= input.updated_at.localtime.to_s(:db) %>
+    </td>
+    <td>
+      <%= link_to_if input.tasks.empty?, "申请",apply_path(input), method: :post %>
     </td>
   </tr>
 <% end %>
