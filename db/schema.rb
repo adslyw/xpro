@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141112095036) do
+ActiveRecord::Schema.define(:version => 20141118063254) do
 
   create_table "assets", :force => true do |t|
     t.integer  "user_id"
@@ -287,6 +287,14 @@ ActiveRecord::Schema.define(:version => 20141112095036) do
   add_index "cb_users", ["device_integer"], :name => "index_user_infos_on_device_integer"
   add_index "cb_users", ["usecust_id"], :name => "index_user_infos_on_usecust_id"
   add_index "cb_users", ["user_id"], :name => "index_user_infos_on_user_id"
+
+  create_table "cities", :id => false, :force => true do |t|
+    t.string "f_area_id"
+    t.string "f_area_name"
+    t.string "city_name"
+  end
+
+  add_index "cities", ["f_area_id"], :name => "index_cities_on_f_area_id"
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0, :null => false

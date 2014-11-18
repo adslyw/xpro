@@ -204,6 +204,13 @@ class ServiceRelation < ActiveRecord::Base
       ""
     end
   end
+  def city
+    begin
+      self.area.city_name
+    rescue
+      ""
+    end
+  end
   def info(*required)
     required = *required
     data = {
@@ -211,6 +218,7 @@ class ServiceRelation < ActiveRecord::Base
       service_type: self.type,
       service_name: self.service_name,
       first_name: self.first_name,
+      city: self.city,
       area_name: self.area_name,
       dealer_name: self.dealer_name,
       developer_name: self.developer_name,

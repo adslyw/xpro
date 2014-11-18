@@ -7,4 +7,13 @@ class Area < ActiveRecord::Base
                        :f_postal_code, :f_area_code,
                        :f_active_date, :f_inactive_date
   has_many :service_relations, :foreign_key => "belong_code"
+  has_one :city, :foreign_key => 'f_area_id', :primary_key => 'f_area_id'
+
+  def city_name
+    begin
+      self.city.city_name
+    rescue
+      ""
+    end
+  end
 end
