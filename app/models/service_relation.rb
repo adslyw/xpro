@@ -113,7 +113,11 @@ class ServiceRelation < ActiveRecord::Base
     end
   end
   def service_name
-    self.service_kind.service_name
+    begin
+      self.service_kind.service_name
+    rescue
+      ""
+    end
   end
   def developer_name
     begin
@@ -137,15 +141,27 @@ class ServiceRelation < ActiveRecord::Base
     end
   end
   def prod_name
-    self.prod.f_prod_name
+    begin
+      self.prod.f_prod_name
+    rescue
+      ""
+    end
   end
   def first_name
-    self.customer.first_name
+    begin
+      self.customer.first_name
+    rescue
+      ""
+    end
   end
   def if_3g
-    case self.prod.f_if_3g
-      when 1 then '3G'
-      when 0 then '2G'
+    begin
+      case self.prod.f_if_3g
+        when 1 then '3G'
+        when 0 then '2G'
+      end
+    rescue
+      ""
     end
   end
   def status_name
@@ -156,14 +172,19 @@ class ServiceRelation < ActiveRecord::Base
     end
   end
   def birthday
-    if self.service_kind.service_kind == 9
-      if pay_type != 2
-        apply_start_date
+    begin
+      if self.service_kind.service_kind == 9
+        if pay_type != 2
+          birthday = apply_start_date
+        else
+          birthday = self.ocs_relation.first_act_date
+        end
       else
-        self.ocs_relation.first_act_date
+        birthday = complete_date
       end
-    else
-      complete_date
+      birthday.localtime.to_s(:db)
+    rescue
+      ""
     end
   end
   def if_bundled
@@ -224,7 +245,7 @@ class ServiceRelation < ActiveRecord::Base
       developer_name: self.developer_name,
       net_kind: self.if_3g,
       prod_name: self.prod_name,
-      birthday: self.birthday.localtime.to_s(:db),
+      birthday: self.birthday,
       status_name: self.status_name,
       if_bundled: self.if_bundled,
       if_primary_card: self.if_primary_card,
