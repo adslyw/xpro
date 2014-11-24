@@ -259,4 +259,13 @@ class ServiceRelation < ActiveRecord::Base
       return data.slice(*required)
     end
   end
+  def self.apply_at(birthday)
+    where(:service_kind = 9,:pay_type <> 2, :apply_start_date =>(birthday.to_date.beginning_of_day.localtime..birthday.to_date.end_of_day.localtime))
+  end
+  def self.complete_at(birthday)
+    where(:service_kind <> 9 ,:complete_date =>(birthday.to_date.beginning_of_day..birthday.to_date.end_of_day))
+  end
+  def self.active_at(birthday)
+    joins(:ocs_relation).where( :service_kind => 9, :pay_type => 2).where('ocs_service_relation_t.first_act_date between ? and ?',birthday.to_date.beginning_of_day,birthday.to_date.end_of_day)
+  end
 end
