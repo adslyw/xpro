@@ -265,13 +265,13 @@ class ServiceRelation < ActiveRecord::Base
     end
   end
   def self.apply_between(start_date,end_date)
-    where(:apply_start_date => (start_date.to_date.beginning_of_day.localtime..end_date.to_date.end_of_day))
+    where(:apply_start_date => (start_date.to_date.beginning_of_day.localtime..end_date.to_date.end_of_day.localtime))
   end
   def self.complete_between(start_date,end_date)
-    where(:complete_date =>(start_date.to_date.beginning_of_day..end_date.to_date.end_of_day))
+    where(:complete_date => (start_date.to_date.beginning_of_day.localtime..end_date.to_date.end_of_day.localtime))
   end
   def self.active_between(start_date,end_date)
-    joins(:ocs_relation).where('ocs_service_relation_t.first_act_date between ? and ?',start_date.to_date.beginning_of_day,end_date.to_date.end_of_day)
+    joins(:ocs_relation).where('ocs_service_relation_t.first_act_date between ? and ?',start_date.to_date.beginning_of_day.localtime,end_date.to_date.end_of_day.localtime)
   end
   def self.born_between(start_date,end_date)
     apply_between(start_date,end_date).yidong.gsm | active_between(start_date,end_date).yidong.ocs | complete_between(start_date,end_date).guwang
