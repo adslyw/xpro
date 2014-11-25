@@ -25,8 +25,8 @@ class ServiceRelation < ActiveRecord::Base
                   :hcust_flag,
                   :if_togather
   establish_connection "remote_db"
-  set_table_name "BB_SERVICE_RELATION_T"
-  set_primary_key :service_id
+  self.table_name = "BB_SERVICE_RELATION_T"
+  self.primary_key = 'service_id'
   ignore_table_columns :preserve01,
                        :preserve02,
                        :preserve03,
@@ -105,6 +105,11 @@ class ServiceRelation < ActiveRecord::Base
   scope :innet, where(:if_valid => 1)
   scope :offnet, where(:if_valid => 0)
   scope :bundled, where("bundle_id != 0")
+  scope :yidong, where("BB_SERVICE_RELATION_T.SERVICE_KIND = 9")
+  scope :guwang, where("BB_SERVICE_RELATION_T.SERVICE_KIND <> 9")
+  scope :kuandai, where("BB_SERVICE_RELATION_T.SERVICE_KIND IN(11,55)")
+  scope :gsm, where(:pay_type => [0,3])
+  scope :ocs, where(:pay_type => 2)
   def type
     if pay_type == 2
       'OCS'
@@ -259,13 +264,16 @@ class ServiceRelation < ActiveRecord::Base
       return data.slice(*required)
     end
   end
-  def self.apply_at(birthday)
-    where(:service_kind = 9,:pay_type <> 2, :apply_start_date =>(birthday.to_date.beginning_of_day.localtime..birthday.to_date.end_of_day.localtime))
+  def self.apply_between(start_date,end_date)
+    where(:apply_start_date => (start_date.to_date.beginning_of_day.localtime..end_date.to_date.end_of_day))
   end
-  def self.complete_at(birthday)
-    where(:service_kind <> 9 ,:complete_date =>(birthday.to_date.beginning_of_day..birthday.to_date.end_of_day))
+  def self.complete_between(start_date,end_date)
+    where(:complete_date =>(start_date.to_date.beginning_of_day..end_date.to_date.end_of_day))
   end
-  def self.active_at(birthday)
-    joins(:ocs_relation).where( :service_kind => 9, :pay_type => 2).where('ocs_service_relation_t.first_act_date between ? and ?',birthday.to_date.beginning_of_day,birthday.to_date.end_of_day)
+  def self.active_between(start_date,end_date)
+    joins(:ocs_relation).where('ocs_service_relation_t.first_act_date between ? and ?',start_date.to_date.beginning_of_day,end_date.to_date.end_of_day)
+  end
+  def self.born_between(start_date,end_date)
+    apply_between(start_date,end_date).yidong.gsm | active_between(start_date,end_date).yidong.ocs | complete_between(start_date,end_date).guwang
   end
 end
