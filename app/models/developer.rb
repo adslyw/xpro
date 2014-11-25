@@ -1,8 +1,8 @@
 class Developer < ActiveRecord::Base
   attr_accessible :dev_code, :dev_name
   establish_connection "remote_db_crm"
-  set_table_name "uni_dealer_developer_t"
-  set_primary_key :dev_code
+  self.table_name = "uni_dealer_developer_t"
+  set_primary_key = "dev_code"
   ignore_table_columns :dev_operate,
                        :dev_type_id,
                        :dev_staff_code,

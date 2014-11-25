@@ -1,8 +1,8 @@
 class Customer < ActiveRecord::Base
   attr_accessible :customer_id, :first_name, :group_flag, :group_id, :identity_code, :identity_kind
   establish_connection "remote_db"
-  set_table_name "BB_CUSTOMER_INFO_T"
-  set_primary_key :customer_id
+  self.table_name = "BB_CUSTOMER_INFO_T"
+  self.primary_key = "customer_id"
   ignore_table_columns :city_code,
                        :region_code,
                        :belong_code,

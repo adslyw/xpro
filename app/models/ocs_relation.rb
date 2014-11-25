@@ -1,8 +1,8 @@
 class OcsRelation < ActiveRecord::Base
   attr_accessible :first_act_date, :service_id, :service_state
   establish_connection "remote_db"
-  set_table_name "OCS_SERVICE_RELATION_T"
-  set_primary_key :service_id
+  self.table_name = "OCS_SERVICE_RELATION_T"
+  self.primary_key = "service_id"
   ignore_table_columns :session_id,
                        :valid_date,
                        :sync_date,

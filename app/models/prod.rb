@@ -1,8 +1,8 @@
 class Prod < ActiveRecord::Base
   attr_accessible :f_if_3g, :f_prod_id, :f_prod_name, :f_prod_type, :f_service_kind
   establish_connection "remote_db"
-  set_table_name "PM_PRODUCT_T"
-  set_primary_key :f_prod_id
+  self.table_name = "PM_PRODUCT_T"
+  self.primary_key = "f_prod_id"
   set_sequence_name :f_prod_id
   set_string_columns :f_if_3g
   ignore_table_columns :f_procinst_id, :f_lifecycle_status, :f_status_chg_time, :f_prod_version,
