@@ -54,7 +54,9 @@
     </div>
     <div class="col-lg-2">
       <% flash.each do |name, msg| -%>
-        <%= content_tag :div, msg, :class => "alert alert-#{name}" %>
+        <div class="text-#{name}">
+          <%= msg%>
+        </div>
       <% end -%>
     </div>
     <script>
