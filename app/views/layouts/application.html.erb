@@ -48,6 +48,9 @@
     </div>
     <div class="col-lg-8">
       <%= yield %>
+      <div class="site-footer">
+        <%= render 'layouts/footer'%>
+      </div>
     </div>
     <div class="col-lg-2">
       <% flash.each do |name, msg| -%>
@@ -57,7 +60,7 @@
     <script>
         $(function () {
             $('#menu').metisMenu();
-            $('.wysihtml5').wysihtml5();            
+            $('.wysihtml5').wysihtml5();
         });
     </script>
 </body>

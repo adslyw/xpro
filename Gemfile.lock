@@ -73,6 +73,8 @@ GEM
       sinatra (>= 1.4.4)
     erubis (2.7.0)
     execjs (2.0.2)
+    font-awesome-rails (4.2.0.0)
+      railties (>= 3.2, < 5.0)
     font-awesome-sass (4.1.0)
       sass (~> 3.2)
     gravatar_image_tag (1.2.0)
@@ -174,6 +176,7 @@ DEPENDENCIES
   debugger
   delayed_job_active_record
   delayed_job_web
+  font-awesome-rails
   font-awesome-sass
   gravatar_image_tag
   jquery-rails

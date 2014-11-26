@@ -69,3 +69,38 @@ ul {
 .active > a > .fa.plus-minus:before {
     content: "\f068";
 }
+
+.blog-post-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 32px;
+}
+.blog-post-meta {
+  list-style: none;
+  margin-bottom: 5px;
+  color: #999;
+}
+.meta-item {
+  display: inline;
+  padding-right: 20px;
+}
+.meta-item a {
+  color: #999;
+}
+.blog-post-body {
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 5px;
+  cursor: default;
+}
+
+.site-footer {
+  position: relative;
+  margin-top: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #777;
+  border-top: 1px solid #eee;
+}

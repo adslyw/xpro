@@ -1,18 +1,28 @@
 <%= will_paginate @posts, :class => 'apple_pagination' %>
 
 <% @posts.each do |post| %>
-    <div class="h2 page-header">
+    <div class="h2">
       <%= link_to post.title, post %>
       <a href="#" class="pull-right">
         <%= gravatar_image_tag(post.user.email,:alt => post.user.email, :gravatar => { :size => 40 }, :class => "img-circle") %>
       </a>
     </div>
+    <div class="blog-post-meta">
+      <div class="meta-item">
+        <%= gravatar_image_tag(post.user.email,:alt => post.user.email, :gravatar => { :size => 15 }) %>
+        <%= link_to post.user.name, user_path(post.user) %>
+      </div>
+      <div class="meta-item">
+        <%= fa_icon "calendar" %>
+        <%= time_ago_in_words(post.created_at.localtime) %> ago
+      </div>
+    </div>
     <div class="">
       <%= post.body.html_safe %>
     </div>
     <div class="">
-      <%= link_to 'Read more', post %>
+      <%= link_to '详细...', post %>
     </div>
 <% end %>
 <br />
-<%= link_to 'New Post', new_post_path, :class => 'btn btn-success btn-large'%>
+<%= link_to '发表新文章', new_post_path, :class => 'btn btn-success btn-large'%>

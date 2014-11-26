@@ -1,13 +1,20 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <h2><%= @post.title %></h2>
-</p>
-
-<p>
+<div class="blog-post-title">
+  <%= @post.title %>
+</div>
+<div class="blog-post-meta">
+  <div class="meta-item">
+    <%= fa_icon "calendar" %>
+    <%= @post.created_at.localtime.to_s(:db) %>
+  </div>
+  <div class="meta-item">
+    <%= gravatar_image_tag(@post.user.email,:alt => @post.user.email, :gravatar => { :size => 15 }) %>
+    <%= link_to @post.user.name, user_path(@post.user) %>
+  </div>
+</div>
+<div class="blog-post-body">
   <%= @post.body.html_safe %>
-</p>
-
+</div>
 
 <%= link_to '编辑', edit_post_path(@post) %> |
 <%= link_to '返回', posts_path %>
