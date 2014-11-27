@@ -1,0 +1,51 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  city_code: MyString
+  region_code: MyString
+  account_id: MyString
+  account_fee_kind: MyString
+  account_fee_id: MyString
+  account_fee_name: MyString
+  left_fee: MyString
+  credit_fee: MyString
+  write_off: MyString
+  unit_fee: MyString
+  trans_ym: MyString
+  pay_rate: MyString
+  pay_rate_base: MyString
+  recent_pay: MyString
+  recent_reduce: MyString
+  use_date: MyString
+  start_date: MyString
+  invalid_date: MyString
+  trans_id: MyString
+  left_handle: MyString
+  pre_num1: MyString
+  fee_flag: MyString
+  flag_note: MyString
+
+two:
+  city_code: MyString
+  region_code: MyString
+  account_id: MyString
+  account_fee_kind: MyString
+  account_fee_id: MyString
+  account_fee_name: MyString
+  left_fee: MyString
+  credit_fee: MyString
+  write_off: MyString
+  unit_fee: MyString
+  trans_ym: MyString
+  pay_rate: MyString
+  pay_rate_base: MyString
+  recent_pay: MyString
+  recent_reduce: MyString
+  use_date: MyString
+  start_date: MyString
+  invalid_date: MyString
+  trans_id: MyString
+  left_handle: MyString
+  pre_num1: MyString
+  fee_flag: MyString
+  flag_note: MyString
