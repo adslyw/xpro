@@ -74,4 +74,6 @@ class CbUser < ActiveRecord::Base
                   :user_type,
                   :user_type_cbss,
                   :fee_date
+
+  default_scope where(:fee_date => (1.month.ago).strftime("%Y%m"))
 end
