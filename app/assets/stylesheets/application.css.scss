@@ -97,7 +97,13 @@ ul {
     border: 1px solid #d8d8d8;
   }
 }
-
+pre {
+  overflow: auto;
+  padding: 10px;
+  color: #cccccc;
+  font-size: 15px;
+  background-color: #272822;
+}
 .site-footer {
   position: relative;
   margin-top: 40px;
