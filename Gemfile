@@ -11,10 +11,12 @@ gem 'paperclip', '~> 4.1'
 gem 'will_paginate', '~> 3.0'
 gem 'acts_as_xlsx'
 gem 'activerecord-oracle_enhanced-adapter', '~> 1.4.0'
-gem 'bootstrap-wysihtml5-rails'
 gem 'delayed_job_active_record'
 gem 'delayed_job_web'
 gem 'gravatar_image_tag'
+gem 'redactor-rails', '0.4.5'
+gem 'carrierwave'
+gem 'mini_magick'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

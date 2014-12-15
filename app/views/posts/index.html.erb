@@ -1,5 +1,6 @@
-<%= will_paginate @posts, :class => 'apple_pagination' %>
-
+<div class="page-tool-bar">
+  <%= link_to '发表新文章', new_post_path, :class => 'btn btn-success btn-large'%>
+</div>
 <% @posts.each do |post| %>
     <div class="h2">
       <%= link_to post.title, post %>
@@ -17,7 +18,7 @@
         <%= time_ago_in_words(post.created_at.localtime) %> ago
       </div>
     </div>
-    <div class="">
+    <div class="blog-post-body">
       <%= post.body.html_safe %>
     </div>
     <div class="">
@@ -25,4 +26,4 @@
     </div>
 <% end %>
 <br />
-<%= link_to '发表新文章', new_post_path, :class => 'btn btn-success btn-large'%>
+<%= will_paginate @posts, :class => 'apple_pagination' %>

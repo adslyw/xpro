@@ -1,4 +1,6 @@
 Dba::Application.routes.draw do
+  mount RedactorRails::Engine => '/redactor_rails'
+
   get "customer/info"
   get "customer/info_by_prefix"
   resources :prods

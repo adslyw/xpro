@@ -1,7 +1,7 @@
 @import "bootstrap";
 @import "font-awesome";
 @import "pagination";
-@import "bootstrap-wysihtml5";
+@import "redactor-rails";
 body {
   padding-top: 50px;
 }
@@ -88,15 +88,19 @@ ul {
   color: #999;
 }
 .blog-post-body {
-  border-top: 1px solid #e5e5e5;
-  border-bottom: 1px solid #e5e5e5;
   padding: 5px;
   cursor: default;
   img {
     padding: 3px;
     border: 1px solid #d8d8d8;
+    height: auto;
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
+
 pre {
   overflow: auto;
   padding: 10px;
@@ -113,4 +117,9 @@ pre {
   line-height: 1.5;
   color: #777;
   border-top: 1px solid #eee;
+}
+
+.page-tool-bar {
+  border-bottom: 1px solid #e5e5e5;
+  padding-top: 1em;
 }

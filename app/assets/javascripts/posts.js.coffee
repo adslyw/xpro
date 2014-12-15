@@ -1,0 +1,3 @@
+->
+  $('.redactor').redactor()
+  return

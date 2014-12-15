@@ -15,4 +15,5 @@
 //= require bootstrap
 //= require_tree .
 //= require highcharts/highcharts
-//= require bootstrap-wysihtml5
+//= require redactor-rails
+//= require redactor-rails/langs/zh_cn

@@ -16,3 +16,4 @@
 /app/helpers/oracle.rb
 /uploaded
 /config/database.yml
+/public/system
