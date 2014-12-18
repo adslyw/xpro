@@ -1,0 +1,10 @@
+.warpper
+  = form_for :session, url: sessions_path, html: {class: "form-signin", role: "form"} do |f|
+    %h2.form-signin-heading
+    = f.text_field :email, class: "form-control", placeholder: "邮箱地址"
+    = f.password_field :password, class: "form-control", placeholder: "密码"
+    .checkbox
+      %label
+        %input#remenberMe{type: "checkbox", value: "remember-me", name: "rememberMe"}
+          自动登录
+    = f.submit "登录", class: "btn btn-large btn-primary btn-block"
