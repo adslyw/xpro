@@ -17,6 +17,8 @@ gem 'gravatar_image_tag'
 gem 'redactor-rails', '0.4.5'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'haml', '~> 4.0.5'
+gem "haml-rails", "~> 0.4.0"
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

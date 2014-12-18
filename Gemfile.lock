@@ -42,8 +42,6 @@ GEM
     bcrypt-ruby (3.0.1)
     bootstrap-sass (3.2.0.0)
       sass (~> 3.2)
-    bootstrap-wysihtml5-rails (0.3.3.1)
-      railties (>= 3.0)
     builder (3.0.4)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
@@ -91,6 +89,13 @@ GEM
     font-awesome-sass (4.1.0)
       sass (~> 3.2)
     gravatar_image_tag (1.2.0)
+    haml (4.0.6)
+      tilt
+    haml-rails (0.4)
+      actionpack (>= 3.1, < 4.1)
+      activesupport (>= 3.1, < 4.1)
+      haml (>= 3.1, < 4.1)
+      railties (>= 3.1, < 4.1)
     hash-deep-merge (0.1.1)
     hike (1.2.3)
     htmlentities (4.3.2)
@@ -195,7 +200,6 @@ DEPENDENCIES
   acts_as_xlsx
   bcrypt-ruby (~> 3.0.1)
   bootstrap-sass (~> 3.2.0)
-  bootstrap-wysihtml5-rails
   carrierwave
   coffee-rails (~> 3.2.1)
   debugger
@@ -204,6 +208,8 @@ DEPENDENCIES
   font-awesome-rails
   font-awesome-sass
   gravatar_image_tag
+  haml (~> 4.0.5)
+  haml-rails (~> 0.4.0)
   jquery-rails
   lazy_high_charts
   mini_magick
