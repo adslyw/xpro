@@ -1,0 +1,27 @@
+
+.page-header.h3.text-muted 注册信息表
+= form_for(@user, html: { role: "form"}) do |f|
+  - if @user.errors.any?
+    #error_explanation
+    %h2
+      = pluralize(@user.errors.count,"error")
+      prohibited this user from being saved:
+    %ul
+      -@user.errors.full_messages do |msg|
+        %li=msg
+  .form-group
+    = f.label :name, "用户名"
+    = f.text_field :name, :class => "form-control", placeholder: "请输入用户名"
+  .form-group
+    = f.label :email, "注册邮箱"
+    = f.text_field :email, :class => "form-control", placeholder: "请输入注册邮箱地址"
+  .form-group
+    = f.label :password, "密码"
+    = f.password_field :password, class: "form-control", placeholder: "请输入密码"
+  .form-group
+    = f.label :password_confirmation, "密码确认"
+    = f.password_field :password_confirmation, class: "form-control", placeholder: "再次输入密码"
+  .form-group
+    %p
+    = f.submit "提交", class: "btn btn-sm btn-info"
+    = link_to "返回", login_url, class: "btn btn-sm btn-warning"

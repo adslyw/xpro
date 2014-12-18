@@ -1,0 +1,13 @@
+.page-header
+
+-@users.each do |user|
+  .media
+    %a.pull-left
+      = gravatar_image_tag user.email, :alt => user.name, :gravatar => { :size => 60 }
+    .media-body
+      %h4.media-heading
+        = link_to user.name, user
+      %br
+      = link_to '编辑', edit_user_path(user), class: "text-muted"
+      = link_to '删除', user, method: :delete, data: { confirm: 'Are you sure?' }, class: "text-muted"
+= will_paginate @users, :class => 'apple_pagination'
