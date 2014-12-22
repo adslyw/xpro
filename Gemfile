@@ -18,7 +18,7 @@ gem 'redactor-rails', '0.4.5'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'haml', '~> 4.0.5'
-gem "haml-rails", "~> 0.4.0"
+gem 'haml-rails', "~> 0.4.0"
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -47,4 +47,4 @@ gem 'font-awesome-rails'
 # gem 'capistrano'
 
 # To use debugger
- gem 'debugger'
+#gem 'debugger'
