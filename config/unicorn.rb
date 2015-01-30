@@ -25,7 +25,7 @@ working_directory app_path
 
 # Set the location of the unicorn pid file. This should match what we put in the
 # unicorn init script later.
-pid app_path + '/tmp/unicorn.pid'
+pid app_path + '/tmp/pids/unicorn.pid'
 
 # You should define your stderr and stdout here. If you don't, stderr defaults
 # to /dev/null and you'll lose any error logging when in daemon mode.
