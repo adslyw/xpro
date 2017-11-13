@@ -1,4 +1,4 @@
-source 'http://ruby.sdutlinux.org/'
+source 'https://gems.ruby-china.org/'
 
 gem 'rails', '3.2.12'
 
